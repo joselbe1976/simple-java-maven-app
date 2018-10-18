@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4cspMobileNotif" table="M4CSP_MOBILE_NOTIF" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4cspMobileNotifId">
+            <key-property name="idOrganization" type="string">
+                <column name="ID_ORGANIZATION" length="10" />
+            </key-property>
+            <key-property name="stdIdPerson" type="string">
+                <column name="STD_ID_PERSON" length="20" />
+            </key-property>
+            <key-property name="cspOrdinal" type="int">
+                <column name="CSP_ORDINAL" precision="9" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="cspMensaje" type="string">
+            <column name="CSP_MENSAJE" />
+        </property>
+        <property name="cspDtCaducidad" type="timestamp">
+            <column name="CSP_DT_CADUCIDAD" length="23" />
+        </property>
+        <property name="cspChkRecibido" type="string">
+            <column name="CSP_CHK_RECIBIDO" length="1" />
+        </property>
+        <property name="cspDescripcion" type="string">
+            <column name="CSP_DESCRIPCION" />
+        </property>
+        <property name="cspDtEnvio" type="timestamp">
+            <column name="CSP_DT_ENVIO" length="23" />
+        </property>
+        <property name="cspChkDelMobile" type="string">
+            <column name="CSP_CHK_DEL_MOBILE" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

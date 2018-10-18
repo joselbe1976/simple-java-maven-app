@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4cspMblInfAbs" table="M4CSP_MBL_INF_ABS" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4cspMblInfAbsId">
+            <key-property name="idOrganization" type="string">
+                <column name="ID_ORGANIZATION" length="10" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="20" />
+            </key-property>
+            <key-property name="fechaAlta" type="timestamp">
+                <column name="FECHA_ALTA" length="23" />
+            </key-property>
+            <key-property name="scoDtStart" type="timestamp">
+                <column name="SCO_DT_START" length="23" />
+            </key-property>
+        </composite-id>
+        <property name="cspComentario" type="string">
+            <column name="CSP_COMENTARIO" length="254" />
+        </property>
+        <property name="idTipoAbsentismo" type="string">
+            <column name="ID_TIPO_ABSENTISMO" length="10" />
+        </property>
+        <property name="scoDtEnd" type="timestamp">
+            <column name="SCO_DT_END" length="23" />
+        </property>
+        <property name="cspIdEstado" type="string">
+            <column name="CSP_ID_ESTADO" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

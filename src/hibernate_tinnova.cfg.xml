@@ -1,0 +1,58 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>  
+  
+    <session-factory>  
+  
+<!-- /10.0.1.31 -->
+        <property name="connection.url">jdbc:sqlserver://172.20.2.62\TINNOVA:1433;databaseName=EMIND_MOBILE</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="hibernate.default_schema">dbo</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="hibernate.connection.pool_size">500</property>  
+        <property name="connection.username">EMIND_MOBILE</property>
+        <property name="connection.autoReconnect">true</property>
+        <property name="connection.password">EMIND_MOBILE</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection..provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">28680</property>
+		<property name="hibernate.c3p0.idleConnectionTestPeriod">300</property>
+		<property name="hibernate.c3p0.maxConnectionAge">5600</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_size">50</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+		<property name="hibernate.c3p0.checkoutTimeout">10000</property>
+	<!-- 	<property name="hibernate.c3p0.timeout">100</property>-->
+		<property name="hibernate.c3p0.testConnectionOnCheckin">true</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.use_sql_comments">true</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tHistDepartam" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tDatosPago" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tCalendario" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tPuestTrab" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tCentrosTrab" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tHistPuestos" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tEmpleados" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tInfGrafEmpl" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tDepartamentos" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tUnidOrg" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tFasesAlta" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tTiposAbsentis" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tHistCentTrab" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tAbsentismos" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4sysPReciboSt" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tHistUnidOrg" />
+        <mapping class="com.common.hibernate.entidades.tinnova.M4tGrupoCalendar" />
+
+
+</session-factory>
+</hibernate-configuration>
+  

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebControllerService WSDL service -->
+
+  <service name="WebController" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controllerWS.conectividad.equilibrha.com"/>
+      <parameter name="wsdlServiceElement" value="WebControllerService"/>
+      <parameter name="schemaQualified" value="http://controllerWS.conectividad.equilibrha.com"/>
+      <parameter name="wsdlServicePort" value="WebController"/>
+      <parameter name="className" value="com.common.webservices.controller.WebController"/>
+      <parameter name="wsdlPortType" value="WebController"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://controllerWS.conectividad.equilibrha.com" xmlns:retNS="http://controllerWS.conectividad.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="pingWC" qname="operNS:pingWC" returnQName="retNS:pingWCReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://controllerWS.conectividad.equilibrha.com" xmlns:retNS="http://controllerWS.conectividad.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUserActives" qname="operNS:getUserActives" returnQName="retNS:getUserActivesReturn" returnType="rtns:double" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="getUserActives pingWC"/>
+
+  </service>
+</deployment>

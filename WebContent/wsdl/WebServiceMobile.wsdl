@@ -1,0 +1,2488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.equilibrha.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.equilibrha.com" xmlns:intf="http://webservices.equilibrha.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices.equilibrha.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="meta4AddAbsentismoEmpleado">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHr" type="xsd:string"/>
+      <element name="periodo" type="xsd:string"/>
+      <element name="fechaIni" type="xsd:string"/>
+      <element name="fechaFin" type="xsd:string"/>
+      <element name="idIncidence" type="xsd:string"/>
+      <element name="Comentario" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4AddAbsentismoEmpleadoResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4AddAbsentismoEmpleadoReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssGetMyQueryMetaData">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="idMeta4Object" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssGetMyQueryMetaDataResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4MssGetMyQueryMetaDataReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaNotificaciones">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalNotificacion" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaNotificacionesResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetListaNotificacionesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4SaveNotificacionLeida">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalNotificacion" type="xsd:double"/>
+      <element name="System" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4SaveNotificacionLeidaResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4SaveNotificacionLeidaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMssListaSolicAbsentPorValidar">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="optional" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMssListaSolicAbsentPorValidarResponse">
+    <complexType>
+     <sequence>
+      <element name="getMssListaSolicAbsentPorValidarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="chgPasswordForgetAndSendByEmail">
+    <complexType>
+     <sequence>
+      <element name="mail" type="xsd:string"/>
+      <element name="numDoc" type="xsd:string"/>
+      <element name="PrimApp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="chgPasswordForgetAndSendByEmailResponse">
+    <complexType>
+     <sequence>
+      <element name="chgPasswordForgetAndSendByEmailReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProductVersion">
+    <complexType/>
+   </element>
+   <element name="getProductVersionResponse">
+    <complexType>
+     <sequence>
+      <element name="getProductVersionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetFichaEmpleado">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdEmpleadoMeta4" type="xsd:string"/>
+      <element name="IdSociedadMeta4" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetFichaEmpleadoResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetFichaEmpleadoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="essDownloadReciboNomina">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="fechaPago" type="xsd:string"/>
+      <element name="fechaAlloc" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="essDownloadReciboNominaResponse">
+    <complexType>
+     <sequence>
+      <element name="essDownloadReciboNominaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetInfoUserApp">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetInfoUserAppResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetInfoUserAppReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelFavoriteRh">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdEmpleadoMeta4" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelFavoriteRhResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4DelFavoriteRhReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addEssNewSolAbsentismo">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="idAbsentismo" type="xsd:string"/>
+      <element name="inicio" type="xsd:string"/>
+      <element name="fin" type="xsd:string"/>
+      <element name="comentarios" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addEssNewSolAbsentismoResponse">
+    <complexType>
+     <sequence>
+      <element name="addEssNewSolAbsentismoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssExecQuery">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="idMeta4Object" type="xsd:string"/>
+      <element name="params" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssExecQueryResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4MssExecQueryReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssMisNoticias">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssMisNoticiasResponse">
+    <complexType>
+     <sequence>
+      <element name="getEssMisNoticiasReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssDatosBancarios">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHr" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssDatosBancariosResponse">
+    <complexType>
+     <sequence>
+      <element name="getEssDatosBancariosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssMisAbsentismos">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="year" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssMisAbsentismosResponse">
+    <complexType>
+     <sequence>
+      <element name="getEssMisAbsentismosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelNotificacion">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalNotificacion" type="xsd:double"/>
+      <element name="System" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelNotificacionResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4DelNotificacionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="essDelSolAbsentismo">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="ordinal" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="essDelSolAbsentismoResponse">
+    <complexType>
+     <sequence>
+      <element name="essDelSolAbsentismoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListTypeDocsSend">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListTypeDocsSendResponse">
+    <complexType>
+     <sequence>
+      <element name="getListTypeDocsSendReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4AddFavoriteRh">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdEmpleadoMeta4" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4AddFavoriteRhResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4AddFavoriteRhReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetImageCacheURL">
+    <complexType>
+     <sequence>
+      <element name="idfoto" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetImageCacheURLResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetImageCacheURLReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4Logout">
+    <complexType>
+     <sequence>
+      <element name="Meta4SessionId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4LogoutResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4LogoutReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendFileRh">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="fileBase64" type="xsd:string"/>
+      <element name="extension" type="xsd:string"/>
+      <element name="IdHr" type="xsd:string"/>
+      <element name="tpFile" type="xsd:string"/>
+      <element name="commentsEmployee" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendFileRhResponse">
+    <complexType>
+     <sequence>
+      <element name="sendFileRhReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAppVersionValidation">
+    <complexType>
+     <sequence>
+      <element name="tipoDevice" type="xsd:string"/>
+      <element name="AppVersionUser" type="xsd:string"/>
+      <element name="ProductVersionApp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAppVersionValidationResponse">
+    <complexType>
+     <sequence>
+      <element name="getAppVersionValidationReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelFileUser">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalFile" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DelFileUserResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4DelFileUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaFilesUser">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalFile" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaFilesUserResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetListaFilesUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMssAceptarSolicAbs">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="ordinal" type="xsd:double"/>
+      <element name="motivo" type="xsd:string"/>
+      <element name="optional" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMssAceptarSolicAbsResponse">
+    <complexType>
+     <sequence>
+      <element name="setMssAceptarSolicAbsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4SaveFileLeido">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalFile" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4SaveFileLeidoResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4SaveFileLeidoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaEmpleados">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="filters" type="xsd:string"/>
+      <element name="paginaDatos" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetListaEmpleadosResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetListaEmpleadosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetRealFileUser">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="OrdinalFile" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetRealFileUserResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetRealFileUserReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetImageCache">
+    <complexType>
+     <sequence>
+      <element name="idFoto" type="xsd:string"/>
+      <element name="idEmpleado" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4GetImageCacheResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4GetImageCacheReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DashboardGetMenus">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4DashboardGetMenusResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4DashboardGetMenusReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssGetMyQueries">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="meta4MssGetMyQueriesResponse">
+    <complexType>
+     <sequence>
+      <element name="meta4MssGetMyQueriesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="chgPasswordUserApp">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="newPass" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="chgPasswordUserAppResponse">
+    <complexType>
+     <sequence>
+      <element name="chgPasswordUserAppReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMssCancelSolicAbs">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="ordinal" type="xsd:double"/>
+      <element name="motivo" type="xsd:string"/>
+      <element name="optional" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setMssCancelSolicAbsResponse">
+    <complexType>
+     <sequence>
+      <element name="setMssCancelSolicAbsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssRecibosNomina">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="year" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssRecibosNominaResponse">
+    <complexType>
+     <sequence>
+      <element name="getEssRecibosNominaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMSSMisEmpleados">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="IdHR" type="xsd:string"/>
+      <element name="filters" type="xsd:string"/>
+      <element name="PaginaDatos" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMSSMisEmpleadosResponse">
+    <complexType>
+     <sequence>
+      <element name="getMSSMisEmpleadosReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssWhoIsWho">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="filters" type="xsd:string"/>
+      <element name="PaginaDatos" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getEssWhoIsWhoResponse">
+    <complexType>
+     <sequence>
+      <element name="getEssWhoIsWhoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="controlSession">
+    <complexType>
+     <sequence>
+      <element name="serialKey64" type="xsd:string"/>
+      <element name="serialCredentials64" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="controlSessionResponse">
+    <complexType>
+     <sequence>
+      <element name="controlSessionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ping">
+    <complexType/>
+   </element>
+   <element name="pingResponse">
+    <complexType>
+     <sequence>
+      <element name="pingReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getEssWhoIsWhoResponse">
+
+      <wsdl:part element="impl:getEssWhoIsWhoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelFavoriteRhResponse">
+
+      <wsdl:part element="impl:meta4DelFavoriteRhResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMssCancelSolicAbsRequest">
+
+      <wsdl:part element="impl:setMssCancelSolicAbs" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetImageCacheURLRequest">
+
+      <wsdl:part element="impl:meta4GetImageCacheURL" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssGetMyQueriesRequest">
+
+      <wsdl:part element="impl:meta4MssGetMyQueries" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingResponse">
+
+      <wsdl:part element="impl:pingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaNotificacionesRequest">
+
+      <wsdl:part element="impl:meta4GetListaNotificaciones" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="chgPasswordForgetAndSendByEmailResponse">
+
+      <wsdl:part element="impl:chgPasswordForgetAndSendByEmailResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaNotificacionesResponse">
+
+      <wsdl:part element="impl:meta4GetListaNotificacionesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="chgPasswordUserAppRequest">
+
+      <wsdl:part element="impl:chgPasswordUserApp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetInfoUserAppResponse">
+
+      <wsdl:part element="impl:meta4GetInfoUserAppResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMssAceptarSolicAbsRequest">
+
+      <wsdl:part element="impl:setMssAceptarSolicAbs" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="chgPasswordUserAppResponse">
+
+      <wsdl:part element="impl:chgPasswordUserAppResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMssCancelSolicAbsResponse">
+
+      <wsdl:part element="impl:setMssCancelSolicAbsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetRealFileUserResponse">
+
+      <wsdl:part element="impl:meta4GetRealFileUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendFileRhRequest">
+
+      <wsdl:part element="impl:sendFileRh" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="essDelSolAbsentismoRequest">
+
+      <wsdl:part element="impl:essDelSolAbsentismo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMssListaSolicAbsentPorValidarResponse">
+
+      <wsdl:part element="impl:getMssListaSolicAbsentPorValidarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4SaveFileLeidoRequest">
+
+      <wsdl:part element="impl:meta4SaveFileLeido" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMSSMisEmpleadosResponse">
+
+      <wsdl:part element="impl:getMSSMisEmpleadosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4AddFavoriteRhResponse">
+
+      <wsdl:part element="impl:meta4AddFavoriteRhResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductVersionResponse">
+
+      <wsdl:part element="impl:getProductVersionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssExecQueryResponse">
+
+      <wsdl:part element="impl:meta4MssExecQueryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaEmpleadosRequest">
+
+      <wsdl:part element="impl:meta4GetListaEmpleados" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DashboardGetMenusRequest">
+
+      <wsdl:part element="impl:meta4DashboardGetMenus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssWhoIsWhoRequest">
+
+      <wsdl:part element="impl:getEssWhoIsWho" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssRecibosNominaResponse">
+
+      <wsdl:part element="impl:getEssRecibosNominaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4AddFavoriteRhRequest">
+
+      <wsdl:part element="impl:meta4AddFavoriteRh" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4LogoutResponse">
+
+      <wsdl:part element="impl:meta4LogoutResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssMisNoticiasResponse">
+
+      <wsdl:part element="impl:getEssMisNoticiasResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="chgPasswordForgetAndSendByEmailRequest">
+
+      <wsdl:part element="impl:chgPasswordForgetAndSendByEmail" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaFilesUserRequest">
+
+      <wsdl:part element="impl:meta4GetListaFilesUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="essDownloadReciboNominaRequest">
+
+      <wsdl:part element="impl:essDownloadReciboNomina" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListTypeDocsSendResponse">
+
+      <wsdl:part element="impl:getListTypeDocsSendResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addEssNewSolAbsentismoRequest">
+
+      <wsdl:part element="impl:addEssNewSolAbsentismo" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssMisAbsentismosResponse">
+
+      <wsdl:part element="impl:getEssMisAbsentismosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaFilesUserResponse">
+
+      <wsdl:part element="impl:meta4GetListaFilesUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssRecibosNominaRequest">
+
+      <wsdl:part element="impl:getEssRecibosNomina" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetFichaEmpleadoRequest">
+
+      <wsdl:part element="impl:meta4GetFichaEmpleado" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAppVersionValidationRequest">
+
+      <wsdl:part element="impl:getAppVersionValidation" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4SaveNotificacionLeidaRequest">
+
+      <wsdl:part element="impl:meta4SaveNotificacionLeida" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssMisAbsentismosRequest">
+
+      <wsdl:part element="impl:getEssMisAbsentismos" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelFileUserRequest">
+
+      <wsdl:part element="impl:meta4DelFileUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="essDelSolAbsentismoResponse">
+
+      <wsdl:part element="impl:essDelSolAbsentismoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendFileRhResponse">
+
+      <wsdl:part element="impl:sendFileRhResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssGetMyQueryMetaDataRequest">
+
+      <wsdl:part element="impl:meta4MssGetMyQueryMetaData" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssMisNoticiasRequest">
+
+      <wsdl:part element="impl:getEssMisNoticias" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4AddAbsentismoEmpleadoResponse">
+
+      <wsdl:part element="impl:meta4AddAbsentismoEmpleadoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMssListaSolicAbsentPorValidarRequest">
+
+      <wsdl:part element="impl:getMssListaSolicAbsentPorValidar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAppVersionValidationResponse">
+
+      <wsdl:part element="impl:getAppVersionValidationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetImageCacheURLResponse">
+
+      <wsdl:part element="impl:meta4GetImageCacheURLResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addEssNewSolAbsentismoResponse">
+
+      <wsdl:part element="impl:addEssNewSolAbsentismoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListTypeDocsSendRequest">
+
+      <wsdl:part element="impl:getListTypeDocsSend" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssGetMyQueryMetaDataResponse">
+
+      <wsdl:part element="impl:meta4MssGetMyQueryMetaDataResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssDatosBancariosRequest">
+
+      <wsdl:part element="impl:getEssDatosBancarios" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelNotificacionRequest">
+
+      <wsdl:part element="impl:meta4DelNotificacion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetListaEmpleadosResponse">
+
+      <wsdl:part element="impl:meta4GetListaEmpleadosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelFileUserResponse">
+
+      <wsdl:part element="impl:meta4DelFileUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4AddAbsentismoEmpleadoRequest">
+
+      <wsdl:part element="impl:meta4AddAbsentismoEmpleado" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductVersionRequest">
+
+      <wsdl:part element="impl:getProductVersion" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DashboardGetMenusResponse">
+
+      <wsdl:part element="impl:meta4DashboardGetMenusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetInfoUserAppRequest">
+
+      <wsdl:part element="impl:meta4GetInfoUserApp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="essDownloadReciboNominaResponse">
+
+      <wsdl:part element="impl:essDownloadReciboNominaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetFichaEmpleadoResponse">
+
+      <wsdl:part element="impl:meta4GetFichaEmpleadoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssGetMyQueriesResponse">
+
+      <wsdl:part element="impl:meta4MssGetMyQueriesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4LogoutRequest">
+
+      <wsdl:part element="impl:meta4Logout" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlSessionResponse">
+
+      <wsdl:part element="impl:controlSessionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelNotificacionResponse">
+
+      <wsdl:part element="impl:meta4DelNotificacionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMSSMisEmpleadosRequest">
+
+      <wsdl:part element="impl:getMSSMisEmpleados" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4SaveFileLeidoResponse">
+
+      <wsdl:part element="impl:meta4SaveFileLeidoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getEssDatosBancariosResponse">
+
+      <wsdl:part element="impl:getEssDatosBancariosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4SaveNotificacionLeidaResponse">
+
+      <wsdl:part element="impl:meta4SaveNotificacionLeidaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlSessionRequest">
+
+      <wsdl:part element="impl:controlSession" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4DelFavoriteRhRequest">
+
+      <wsdl:part element="impl:meta4DelFavoriteRh" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetRealFileUserRequest">
+
+      <wsdl:part element="impl:meta4GetRealFileUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setMssAceptarSolicAbsResponse">
+
+      <wsdl:part element="impl:setMssAceptarSolicAbsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetImageCacheResponse">
+
+      <wsdl:part element="impl:meta4GetImageCacheResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingRequest">
+
+      <wsdl:part element="impl:ping" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4MssExecQueryRequest">
+
+      <wsdl:part element="impl:meta4MssExecQuery" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="meta4GetImageCacheRequest">
+
+      <wsdl:part element="impl:meta4GetImageCache" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebServiceMobile">
+
+      <wsdl:operation name="meta4AddAbsentismoEmpleado">
+
+         <wsdl:input message="impl:meta4AddAbsentismoEmpleadoRequest" name="meta4AddAbsentismoEmpleadoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4AddAbsentismoEmpleadoResponse" name="meta4AddAbsentismoEmpleadoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssGetMyQueryMetaData">
+
+         <wsdl:input message="impl:meta4MssGetMyQueryMetaDataRequest" name="meta4MssGetMyQueryMetaDataRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4MssGetMyQueryMetaDataResponse" name="meta4MssGetMyQueryMetaDataResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaNotificaciones">
+
+         <wsdl:input message="impl:meta4GetListaNotificacionesRequest" name="meta4GetListaNotificacionesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetListaNotificacionesResponse" name="meta4GetListaNotificacionesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4SaveNotificacionLeida">
+
+         <wsdl:input message="impl:meta4SaveNotificacionLeidaRequest" name="meta4SaveNotificacionLeidaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4SaveNotificacionLeidaResponse" name="meta4SaveNotificacionLeidaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMssListaSolicAbsentPorValidar">
+
+         <wsdl:input message="impl:getMssListaSolicAbsentPorValidarRequest" name="getMssListaSolicAbsentPorValidarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMssListaSolicAbsentPorValidarResponse" name="getMssListaSolicAbsentPorValidarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="chgPasswordForgetAndSendByEmail">
+
+         <wsdl:input message="impl:chgPasswordForgetAndSendByEmailRequest" name="chgPasswordForgetAndSendByEmailRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:chgPasswordForgetAndSendByEmailResponse" name="chgPasswordForgetAndSendByEmailResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductVersion">
+
+         <wsdl:input message="impl:getProductVersionRequest" name="getProductVersionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProductVersionResponse" name="getProductVersionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetFichaEmpleado">
+
+         <wsdl:input message="impl:meta4GetFichaEmpleadoRequest" name="meta4GetFichaEmpleadoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetFichaEmpleadoResponse" name="meta4GetFichaEmpleadoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="essDownloadReciboNomina">
+
+         <wsdl:input message="impl:essDownloadReciboNominaRequest" name="essDownloadReciboNominaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:essDownloadReciboNominaResponse" name="essDownloadReciboNominaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetInfoUserApp">
+
+         <wsdl:input message="impl:meta4GetInfoUserAppRequest" name="meta4GetInfoUserAppRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetInfoUserAppResponse" name="meta4GetInfoUserAppResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelFavoriteRh">
+
+         <wsdl:input message="impl:meta4DelFavoriteRhRequest" name="meta4DelFavoriteRhRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4DelFavoriteRhResponse" name="meta4DelFavoriteRhResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addEssNewSolAbsentismo">
+
+         <wsdl:input message="impl:addEssNewSolAbsentismoRequest" name="addEssNewSolAbsentismoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addEssNewSolAbsentismoResponse" name="addEssNewSolAbsentismoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssExecQuery">
+
+         <wsdl:input message="impl:meta4MssExecQueryRequest" name="meta4MssExecQueryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4MssExecQueryResponse" name="meta4MssExecQueryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssMisNoticias">
+
+         <wsdl:input message="impl:getEssMisNoticiasRequest" name="getEssMisNoticiasRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEssMisNoticiasResponse" name="getEssMisNoticiasResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssDatosBancarios">
+
+         <wsdl:input message="impl:getEssDatosBancariosRequest" name="getEssDatosBancariosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEssDatosBancariosResponse" name="getEssDatosBancariosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssMisAbsentismos">
+
+         <wsdl:input message="impl:getEssMisAbsentismosRequest" name="getEssMisAbsentismosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEssMisAbsentismosResponse" name="getEssMisAbsentismosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelNotificacion">
+
+         <wsdl:input message="impl:meta4DelNotificacionRequest" name="meta4DelNotificacionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4DelNotificacionResponse" name="meta4DelNotificacionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="essDelSolAbsentismo">
+
+         <wsdl:input message="impl:essDelSolAbsentismoRequest" name="essDelSolAbsentismoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:essDelSolAbsentismoResponse" name="essDelSolAbsentismoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListTypeDocsSend">
+
+         <wsdl:input message="impl:getListTypeDocsSendRequest" name="getListTypeDocsSendRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListTypeDocsSendResponse" name="getListTypeDocsSendResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4AddFavoriteRh">
+
+         <wsdl:input message="impl:meta4AddFavoriteRhRequest" name="meta4AddFavoriteRhRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4AddFavoriteRhResponse" name="meta4AddFavoriteRhResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetImageCacheURL">
+
+         <wsdl:input message="impl:meta4GetImageCacheURLRequest" name="meta4GetImageCacheURLRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetImageCacheURLResponse" name="meta4GetImageCacheURLResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4Logout">
+
+         <wsdl:input message="impl:meta4LogoutRequest" name="meta4LogoutRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4LogoutResponse" name="meta4LogoutResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendFileRh">
+
+         <wsdl:input message="impl:sendFileRhRequest" name="sendFileRhRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendFileRhResponse" name="sendFileRhResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAppVersionValidation">
+
+         <wsdl:input message="impl:getAppVersionValidationRequest" name="getAppVersionValidationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAppVersionValidationResponse" name="getAppVersionValidationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelFileUser">
+
+         <wsdl:input message="impl:meta4DelFileUserRequest" name="meta4DelFileUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4DelFileUserResponse" name="meta4DelFileUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaFilesUser">
+
+         <wsdl:input message="impl:meta4GetListaFilesUserRequest" name="meta4GetListaFilesUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetListaFilesUserResponse" name="meta4GetListaFilesUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMssAceptarSolicAbs">
+
+         <wsdl:input message="impl:setMssAceptarSolicAbsRequest" name="setMssAceptarSolicAbsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMssAceptarSolicAbsResponse" name="setMssAceptarSolicAbsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4SaveFileLeido">
+
+         <wsdl:input message="impl:meta4SaveFileLeidoRequest" name="meta4SaveFileLeidoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4SaveFileLeidoResponse" name="meta4SaveFileLeidoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaEmpleados">
+
+         <wsdl:input message="impl:meta4GetListaEmpleadosRequest" name="meta4GetListaEmpleadosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetListaEmpleadosResponse" name="meta4GetListaEmpleadosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetRealFileUser">
+
+         <wsdl:input message="impl:meta4GetRealFileUserRequest" name="meta4GetRealFileUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetRealFileUserResponse" name="meta4GetRealFileUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetImageCache">
+
+         <wsdl:input message="impl:meta4GetImageCacheRequest" name="meta4GetImageCacheRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4GetImageCacheResponse" name="meta4GetImageCacheResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DashboardGetMenus">
+
+         <wsdl:input message="impl:meta4DashboardGetMenusRequest" name="meta4DashboardGetMenusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4DashboardGetMenusResponse" name="meta4DashboardGetMenusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssGetMyQueries">
+
+         <wsdl:input message="impl:meta4MssGetMyQueriesRequest" name="meta4MssGetMyQueriesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:meta4MssGetMyQueriesResponse" name="meta4MssGetMyQueriesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="chgPasswordUserApp">
+
+         <wsdl:input message="impl:chgPasswordUserAppRequest" name="chgPasswordUserAppRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:chgPasswordUserAppResponse" name="chgPasswordUserAppResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMssCancelSolicAbs">
+
+         <wsdl:input message="impl:setMssCancelSolicAbsRequest" name="setMssCancelSolicAbsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setMssCancelSolicAbsResponse" name="setMssCancelSolicAbsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssRecibosNomina">
+
+         <wsdl:input message="impl:getEssRecibosNominaRequest" name="getEssRecibosNominaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEssRecibosNominaResponse" name="getEssRecibosNominaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMSSMisEmpleados">
+
+         <wsdl:input message="impl:getMSSMisEmpleadosRequest" name="getMSSMisEmpleadosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMSSMisEmpleadosResponse" name="getMSSMisEmpleadosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssWhoIsWho">
+
+         <wsdl:input message="impl:getEssWhoIsWhoRequest" name="getEssWhoIsWhoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getEssWhoIsWhoResponse" name="getEssWhoIsWhoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlSession">
+
+         <wsdl:input message="impl:controlSessionRequest" name="controlSessionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:controlSessionResponse" name="controlSessionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ping">
+
+         <wsdl:input message="impl:pingRequest" name="pingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:pingResponse" name="pingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceMobileSoapBinding" type="impl:WebServiceMobile">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="meta4AddAbsentismoEmpleado">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4AddAbsentismoEmpleadoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4AddAbsentismoEmpleadoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssGetMyQueryMetaData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4MssGetMyQueryMetaDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4MssGetMyQueryMetaDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaNotificaciones">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetListaNotificacionesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetListaNotificacionesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4SaveNotificacionLeida">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4SaveNotificacionLeidaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4SaveNotificacionLeidaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMssListaSolicAbsentPorValidar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMssListaSolicAbsentPorValidarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMssListaSolicAbsentPorValidarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="chgPasswordForgetAndSendByEmail">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="chgPasswordForgetAndSendByEmailRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="chgPasswordForgetAndSendByEmailResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductVersion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductVersionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductVersionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetFichaEmpleado">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetFichaEmpleadoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetFichaEmpleadoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="essDownloadReciboNomina">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="essDownloadReciboNominaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="essDownloadReciboNominaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetInfoUserApp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetInfoUserAppRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetInfoUserAppResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelFavoriteRh">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4DelFavoriteRhRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4DelFavoriteRhResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addEssNewSolAbsentismo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addEssNewSolAbsentismoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addEssNewSolAbsentismoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssExecQuery">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4MssExecQueryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4MssExecQueryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssMisNoticias">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEssMisNoticiasRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEssMisNoticiasResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssDatosBancarios">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEssDatosBancariosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEssDatosBancariosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssMisAbsentismos">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEssMisAbsentismosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEssMisAbsentismosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelNotificacion">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4DelNotificacionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4DelNotificacionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="essDelSolAbsentismo">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="essDelSolAbsentismoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="essDelSolAbsentismoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getListTypeDocsSend">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListTypeDocsSendRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListTypeDocsSendResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4AddFavoriteRh">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4AddFavoriteRhRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4AddFavoriteRhResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetImageCacheURL">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetImageCacheURLRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetImageCacheURLResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4Logout">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4LogoutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4LogoutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendFileRh">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendFileRhRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendFileRhResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAppVersionValidation">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAppVersionValidationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAppVersionValidationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DelFileUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4DelFileUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4DelFileUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaFilesUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetListaFilesUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetListaFilesUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMssAceptarSolicAbs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMssAceptarSolicAbsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMssAceptarSolicAbsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4SaveFileLeido">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4SaveFileLeidoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4SaveFileLeidoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetListaEmpleados">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetListaEmpleadosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetListaEmpleadosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetRealFileUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetRealFileUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetRealFileUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4GetImageCache">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4GetImageCacheRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4GetImageCacheResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4DashboardGetMenus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4DashboardGetMenusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4DashboardGetMenusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="meta4MssGetMyQueries">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="meta4MssGetMyQueriesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="meta4MssGetMyQueriesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="chgPasswordUserApp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="chgPasswordUserAppRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="chgPasswordUserAppResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setMssCancelSolicAbs">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setMssCancelSolicAbsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setMssCancelSolicAbsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssRecibosNomina">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEssRecibosNominaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEssRecibosNominaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMSSMisEmpleados">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMSSMisEmpleadosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMSSMisEmpleadosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getEssWhoIsWho">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getEssWhoIsWhoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getEssWhoIsWhoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlSession">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="controlSessionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="controlSessionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ping">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceMobileService">
+
+      <wsdl:port binding="impl:WebServiceMobileSoapBinding" name="WebServiceMobile">
+
+         <wsdlsoap:address location="http://localhost:8080/backendmovilidad/services/WebServiceMobile"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

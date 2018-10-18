@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tUnidOrg" table="M4T_UNID_ORG" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tUnidOrgId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idUnidad" type="string">
+                <column name="ID_UNIDAD" length="10" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="m4tUnidOrg" class="com.common.hibernate.entidades.tinnova.M4tUnidOrg" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_UNIDAD_SUPERIOR" length="10" not-null="true" />
+        </many-to-one>
+        <property name="NUnidad" type="string">
+            <column name="N_UNIDAD" length="40" not-null="true" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="idTipUnidOrgan" type="char">
+            <column name="ID_TIP_UNID_ORGAN" length="1" not-null="true" />
+        </property>
+        <property name="idTipoNodoSt" type="string">
+            <column name="ID_TIPO_NODO_ST" length="10" not-null="true" />
+        </property>
+        <set name="m4tHistUnidOrgs" table="M4T_HIST_UNID_ORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_UNIDAD" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistUnidOrg" />
+        </set>
+        <set name="m4tUnidOrgs" table="M4T_UNID_ORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_UNIDAD_SUPERIOR" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tUnidOrg" />
+        </set>
+    </class>
+</hibernate-mapping>

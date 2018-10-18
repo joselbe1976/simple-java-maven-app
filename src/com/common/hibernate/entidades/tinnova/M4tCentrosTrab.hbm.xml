@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tCentrosTrab" table="M4T_CENTROS_TRAB" schema="dbo" catalog="EMIND">
+        <id name="idCentroTrabajo" type="string">
+            <column name="ID_CENTRO_TRABAJO" length="10" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="m4tGrupoCalendar" class="com.common.hibernate.entidades.tinnova.M4tGrupoCalendar" fetch="select">
+            <column name="ID_GRUPO_CALENDARI" length="2" not-null="true" />
+        </many-to-one>
+        <property name="NCentroTrabajo" type="string">
+            <column name="N_CENTRO_TRABAJO" length="40" not-null="true" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="DOMICILIO" length="40" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="POBLACION" length="20" />
+        </property>
+        <property name="telefono" type="string">
+            <column name="TELEFONO" length="40" />
+        </property>
+        <property name="responsable" type="string">
+            <column name="RESPONSABLE" length="40" />
+        </property>
+        <property name="idSubdivGeograf" type="byte">
+            <column name="ID_SUBDIV_GEOGRAF" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="numCentroTrabajo" type="java.lang.Short">
+            <column name="NUM_CENTRO_TRABAJO" precision="3" scale="0" />
+        </property>
+        <property name="numTrabCentrSt" type="java.lang.Integer">
+            <column name="NUM_TRAB_CENTR_ST" precision="6" scale="0" />
+        </property>
+        <property name="codLocalCentrSt" type="string">
+            <column name="COD_LOCAL_CENTR_ST" length="5" />
+        </property>
+        <property name="distritoPostal" type="string">
+            <column name="DISTRITO_POSTAL" length="5" />
+        </property>
+        <property name="idNacion" type="string">
+            <column name="ID_NACION" length="3" not-null="true" />
+        </property>
+        <property name="idMunicSepe" type="string">
+            <column name="ID_MUNIC_SEPE" length="5" />
+        </property>
+        <set name="m4tHistCentTrabs" table="M4T_HIST_CENT_TRAB" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_CENTRO_TRABAJO" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistCentTrab" />
+        </set>
+    </class>
+</hibernate-mapping>

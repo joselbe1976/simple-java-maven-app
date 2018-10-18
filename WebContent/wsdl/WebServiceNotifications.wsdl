@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://webservices.equilibrha.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://webservices.equilibrha.com" xmlns:intf="http://webservices.equilibrha.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://webservices.equilibrha.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getListaNotificacionesLOCAL">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getListaNotificacionesLOCALResponse">
+    <complexType>
+     <sequence>
+      <element name="getListaNotificacionesLOCALReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotificationChannel">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="channel" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotificationChannelResponse">
+    <complexType>
+     <sequence>
+      <element name="sendPushNotificationChannelReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotificationTinnova">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="idEmpleado" type="xsd:string"/>
+      <element name="sociedad" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotificationTinnovaResponse">
+    <complexType>
+     <sequence>
+      <element name="sendPushNotificationTinnovaReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNotification">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="localUser" type="xsd:string"/>
+      <element name="title" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+      <element name="daysExpire" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNotificationResponse">
+    <complexType>
+     <sequence>
+      <element name="addNotificationReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotification">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="localUser" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="sendPushNotificationResponse">
+    <complexType>
+     <sequence>
+      <element name="sendPushNotificationReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNotificationFindUser">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="nif" type="xsd:string"/>
+      <element name="id_empleado" type="xsd:string"/>
+      <element name="fase_alta" type="xsd:string"/>
+      <element name="title" type="xsd:string"/>
+      <element name="message" type="xsd:string"/>
+      <element name="daysExpire" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addNotificationFindUserResponse">
+    <complexType>
+     <sequence>
+      <element name="addNotificationFindUserReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNotificationRead">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="localUser" type="xsd:string"/>
+      <element name="ordinal" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNotificationReadResponse">
+    <complexType>
+     <sequence>
+      <element name="setNotificationReadReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNotificationDeleted">
+    <complexType>
+     <sequence>
+      <element name="StrCredentials" type="xsd:string"/>
+      <element name="localUser" type="xsd:string"/>
+      <element name="ordinal" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="setNotificationDeletedResponse">
+    <complexType>
+     <sequence>
+      <element name="setNotificationDeletedReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="controlSession">
+    <complexType>
+     <sequence>
+      <element name="serialKey64" type="xsd:string"/>
+      <element name="serialCredentials64" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="controlSessionResponse">
+    <complexType>
+     <sequence>
+      <element name="controlSessionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="ping">
+    <complexType/>
+   </element>
+   <element name="pingResponse">
+    <complexType>
+     <sequence>
+      <element name="pingReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="sendPushNotificationChannelResponse">
+
+      <wsdl:part element="impl:sendPushNotificationChannelResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendPushNotificationResponse">
+
+      <wsdl:part element="impl:sendPushNotificationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNotificationReadResponse">
+
+      <wsdl:part element="impl:setNotificationReadResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendPushNotificationTinnovaResponse">
+
+      <wsdl:part element="impl:sendPushNotificationTinnovaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendPushNotificationTinnovaRequest">
+
+      <wsdl:part element="impl:sendPushNotificationTinnova" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingResponse">
+
+      <wsdl:part element="impl:pingResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNotificationFindUserResponse">
+
+      <wsdl:part element="impl:addNotificationFindUserResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListaNotificacionesLOCALResponse">
+
+      <wsdl:part element="impl:getListaNotificacionesLOCALResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getListaNotificacionesLOCALRequest">
+
+      <wsdl:part element="impl:getListaNotificacionesLOCAL" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlSessionResponse">
+
+      <wsdl:part element="impl:controlSessionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNotificationReadRequest">
+
+      <wsdl:part element="impl:setNotificationRead" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendPushNotificationRequest">
+
+      <wsdl:part element="impl:sendPushNotification" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="controlSessionRequest">
+
+      <wsdl:part element="impl:controlSession" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingRequest">
+
+      <wsdl:part element="impl:ping" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNotificationFindUserRequest">
+
+      <wsdl:part element="impl:addNotificationFindUser" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNotificationRequest">
+
+      <wsdl:part element="impl:addNotification" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNotificationDeletedRequest">
+
+      <wsdl:part element="impl:setNotificationDeleted" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="sendPushNotificationChannelRequest">
+
+      <wsdl:part element="impl:sendPushNotificationChannel" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addNotificationResponse">
+
+      <wsdl:part element="impl:addNotificationResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="setNotificationDeletedResponse">
+
+      <wsdl:part element="impl:setNotificationDeletedResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebServiceNotifications">
+
+      <wsdl:operation name="getListaNotificacionesLOCAL">
+
+         <wsdl:input message="impl:getListaNotificacionesLOCALRequest" name="getListaNotificacionesLOCALRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getListaNotificacionesLOCALResponse" name="getListaNotificacionesLOCALResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotificationChannel">
+
+         <wsdl:input message="impl:sendPushNotificationChannelRequest" name="sendPushNotificationChannelRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendPushNotificationChannelResponse" name="sendPushNotificationChannelResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotificationTinnova">
+
+         <wsdl:input message="impl:sendPushNotificationTinnovaRequest" name="sendPushNotificationTinnovaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendPushNotificationTinnovaResponse" name="sendPushNotificationTinnovaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNotification">
+
+         <wsdl:input message="impl:addNotificationRequest" name="addNotificationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addNotificationResponse" name="addNotificationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotification">
+
+         <wsdl:input message="impl:sendPushNotificationRequest" name="sendPushNotificationRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:sendPushNotificationResponse" name="sendPushNotificationResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNotificationFindUser">
+
+         <wsdl:input message="impl:addNotificationFindUserRequest" name="addNotificationFindUserRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addNotificationFindUserResponse" name="addNotificationFindUserResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNotificationRead">
+
+         <wsdl:input message="impl:setNotificationReadRequest" name="setNotificationReadRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNotificationReadResponse" name="setNotificationReadResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNotificationDeleted">
+
+         <wsdl:input message="impl:setNotificationDeletedRequest" name="setNotificationDeletedRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:setNotificationDeletedResponse" name="setNotificationDeletedResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlSession">
+
+         <wsdl:input message="impl:controlSessionRequest" name="controlSessionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:controlSessionResponse" name="controlSessionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ping">
+
+         <wsdl:input message="impl:pingRequest" name="pingRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:pingResponse" name="pingResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebServiceNotificationsSoapBinding" type="impl:WebServiceNotifications">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getListaNotificacionesLOCAL">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getListaNotificacionesLOCALRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getListaNotificacionesLOCALResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotificationChannel">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendPushNotificationChannelRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendPushNotificationChannelResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotificationTinnova">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendPushNotificationTinnovaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendPushNotificationTinnovaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNotification">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addNotificationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addNotificationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sendPushNotification">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="sendPushNotificationRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="sendPushNotificationResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addNotificationFindUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addNotificationFindUserRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addNotificationFindUserResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNotificationRead">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNotificationReadRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNotificationReadResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="setNotificationDeleted">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="setNotificationDeletedRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="setNotificationDeletedResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="controlSession">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="controlSessionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="controlSessionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="ping">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pingRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pingResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebServiceNotificationsService">
+
+      <wsdl:port binding="impl:WebServiceNotificationsSoapBinding" name="WebServiceNotifications">
+
+         <wsdlsoap:address location="http://localhost:8080/backendmovilidad/services/WebServiceNotifications"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

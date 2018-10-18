@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controllerWS.conectividad.equilibrha.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controllerWS.conectividad.equilibrha.com" xmlns:intf="http://controllerWS.conectividad.equilibrha.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controllerWS.conectividad.equilibrha.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="pingWC">
+    <complexType/>
+   </element>
+   <element name="pingWCResponse">
+    <complexType>
+     <sequence>
+      <element name="pingWCReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUserActives">
+    <complexType/>
+   </element>
+   <element name="getUserActivesResponse">
+    <complexType>
+     <sequence>
+      <element name="getUserActivesReturn" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getUserActivesResponse">
+
+      <wsdl:part element="impl:getUserActivesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingWCResponse">
+
+      <wsdl:part element="impl:pingWCResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserActivesRequest">
+
+      <wsdl:part element="impl:getUserActives" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="pingWCRequest">
+
+      <wsdl:part element="impl:pingWC" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="WebController">
+
+      <wsdl:operation name="pingWC">
+
+         <wsdl:input message="impl:pingWCRequest" name="pingWCRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:pingWCResponse" name="pingWCResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserActives">
+
+         <wsdl:input message="impl:getUserActivesRequest" name="getUserActivesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUserActivesResponse" name="getUserActivesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="WebControllerSoapBinding" type="impl:WebController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="pingWC">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="pingWCRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="pingWCResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUserActives">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserActivesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserActivesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="WebControllerService">
+
+      <wsdl:port binding="impl:WebControllerSoapBinding" name="WebController">
+
+         <wsdlsoap:address location="http://localhost:8080/backendmovilidad/services/WebController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

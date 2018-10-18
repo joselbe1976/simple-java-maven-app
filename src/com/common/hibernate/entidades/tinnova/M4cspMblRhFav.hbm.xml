@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4cspMblRhFav" table="M4CSP_MBL_RH_FAV" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4cspMblRhFavId">
+            <key-property name="idOrganization" type="string">
+                <column name="ID_ORGANIZATION" length="10" />
+            </key-property>
+            <key-property name="stdIdPerson" type="string">
+                <column name="STD_ID_PERSON" length="20" />
+            </key-property>
+            <key-property name="stdIdPersonTarg" type="string">
+                <column name="STD_ID_PERSON_TARG" length="9" />
+            </key-property>
+        </composite-id>
+        <property name="cspDescripcion" type="string">
+            <column name="CSP_DESCRIPCION" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebServiceNotificationsService WSDL service -->
+
+  <service name="WebServiceNotifications" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.equilibrha.com"/>
+      <parameter name="wsdlServiceElement" value="WebServiceNotificationsService"/>
+      <parameter name="schemaQualified" value="http://webservices.equilibrha.com"/>
+      <parameter name="wsdlServicePort" value="WebServiceNotifications"/>
+      <parameter name="className" value="com.common.webservices.WebServiceNotifications"/>
+      <parameter name="wsdlPortType" value="WebServiceNotifications"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getListaNotificacionesLOCAL" qname="operNS:getListaNotificacionesLOCAL" returnQName="retNS:getListaNotificacionesLOCALReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendPushNotificationChannel" qname="operNS:sendPushNotificationChannel" returnQName="retNS:sendPushNotificationChannelReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:channel" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendPushNotificationTinnova" qname="operNS:sendPushNotificationTinnova" returnQName="retNS:sendPushNotificationTinnovaReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idEmpleado" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:sociedad" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addNotification" qname="operNS:addNotification" returnQName="retNS:addNotificationReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:localUser" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:daysExpire" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendPushNotification" qname="operNS:sendPushNotification" returnQName="retNS:sendPushNotificationReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:localUser" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addNotificationFindUser" qname="operNS:addNotificationFindUser" returnQName="retNS:addNotificationFindUserReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nif" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id_empleado" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fase_alta" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:title" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:message" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:daysExpire" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setNotificationRead" qname="operNS:setNotificationRead" returnQName="retNS:setNotificationReadReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:localUser" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ordinal" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setNotificationDeleted" qname="operNS:setNotificationDeleted" returnQName="retNS:setNotificationDeletedReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:localUser" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ordinal" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="controlSession" qname="operNS:controlSession" returnQName="retNS:controlSessionReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:serialKey64" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:serialCredentials64" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="ping" qname="operNS:ping" returnQName="retNS:pingReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="addNotificationFindUser setNotificationRead setNotificationDeleted addNotification ping sendPushNotificationChannel getListaNotificacionesLOCAL sendPushNotification controlSession sendPushNotificationTinnova"/>
+
+  </service>
+</deployment>

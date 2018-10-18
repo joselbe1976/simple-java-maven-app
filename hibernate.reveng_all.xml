@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="movilidad" match-name="vin_devices"/>
+  <table-filter match-catalog="movilidad" match-name="vin_logs"/>
+  <table-filter match-catalog="movilidad" match-name="vin_notifications"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_device"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_global"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_process"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_process_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_role"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_system"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_user"/>
+  <table-filter match-catalog="movilidad" match-name="vin_process"/>
+  <table-filter match-catalog="movilidad" match-name="vin_roles"/>
+  <table-filter match-catalog="movilidad" match-name="vin_statistics"/>
+  <table-filter match-catalog="movilidad" match-name="vin_systems"/>
+  <table-filter match-catalog="movilidad" match-name="vin_users"/>
+  <table-filter match-catalog="movilidad" match-name="vin_users_system"/>
+  <table-filter match-catalog="movilidad" match-name="vin_users_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_process_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_device_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_role_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_system_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_params_user_view"/>
+  <table-filter match-catalog="movilidad" match-name="vin_statistics_view"/>
+</hibernate-reverse-engineering>

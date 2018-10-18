@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>equilibrha Mobile</title>
+
+        <link rel="stylesheet" href="css/cliente.css" type="text/css" />
+        <link rel="stylesheet" href="css/style_login.css" type="text/css" >
+        <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+        
+        <script type="text/javascript" src="scripts/core.js"></script>
+        <link rel="stylesheet" href="jqwidgets/styles/jqx.base.css" type="text/css" />
+        <link rel="stylesheet" href="jqwidgets/styles/jqx.darkblue.css" type="text/css" />
+        <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxcore.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxinput.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxcombobox.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxbuttons.js"></script>   
+        <script type="text/javascript" src="jqwidgets/jqxdata.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxtooltip.js"></script>    
+        <script type="text/javascript" src="jqwidgets/jqxlistbox.js"></script>
+        <script type="text/javascript" src="jqwidgets/jqxscrollbar.js"></script>
+        <script type="text/javascript" src="scripts/jquery.i18n.properties-min.js"></script>
+
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> <!-- Se debe indicar siempre UTF-8 par acentos etc -->
+        <meta name="dcterms.identifier" content="http://equilibrha.es/" />
+        <meta name="dcterms.title" content="Equilibrha mobile" />
+        
+        
+        
+    <script type="text/javascript">
+   
+    
+
+
+		//Jquery
+        
+        $(document).ready(function () {
+            
+            $("#loginPass").val('');
+
+      
+            
+            //click sobre el botón
+            $("#enviar").click(function () {
+            		$("#error").html(''); //INICIALIZAMOS EL ERROR
+            		$('#enviar').jqxButton({disabled: true });
+                
+                    $.post('src/login/login.jsp', { idioma : '3', loginEmail:$('#loginEmail').val(), loginPass:$('#loginPass').val()}, 
+                                    function(resp) {
+                                           
+                                          if (resp.trim() == "true")
+                                          {
+                                            //cargamos el menu
+                                            var url = 'src/menu/main.jsp';
+                                            $("#login").attr("action", url);
+                                            $("#login").submit();                                            
+                                          }                                          
+                                          else
+                                          {
+                                              $("#error").html('<b><center>Acceso al sistema no permitido</center></b>');
+                                              $('#enviar').jqxButton({disabled: false });
+                                          }
+                                    }
+                                );
+                
+                    
+            });
+                        
+            //formato
+            $("#enviar").jqxButton({ theme: 'black',width: 100, height: 34 });
+
+            
+
+            //evento enter
+            $('#loginPass').keypress(function(e){
+                if(e.keyCode==13){$('#enviar').click();}
+              });
+
+
+         
+        });
+        
+     </script> 
+     
+    </head>
+    
+    <body>
+        
+        <form id="login" method="post" action="">
+        <section class="container">
+
+            <div class="login">
+            
+            	<center><img src="images/equilibrha.png" height="50"></center> 
+              	<br><h1>Web administración mobile</h1>
+                <p><input type="text" id="loginEmail" value="" placeholder="Usuario"></p>
+                <p><input type="password" id="loginPass" value="" placeholder="Clave"></p>
+                <p><div class="error" id="error"></div></p>
+                 <p class="submit"><input type="button" id="enviar" value="Login"></p>
+            </div>
+          </section>        
+        </form>
+        
+  </body>
+</html>
+

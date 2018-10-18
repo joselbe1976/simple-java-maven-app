@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tFasesAlta" table="M4T_FASES_ALTA" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tFasesAltaId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+            <key-property name="fecAltaEmpleado" type="timestamp">
+                <column name="FEC_ALTA_EMPLEADO" length="23" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="m4tEmpleados" class="com.common.hibernate.entidades.tinnova.M4tEmpleados" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_EMPLEADO" length="10" not-null="true" />
+        </many-to-one>
+        <property name="fecBaja" type="timestamp">
+            <column name="FEC_BAJA" length="23" />
+        </property>
+        <property name="fecAntiguedad" type="timestamp">
+            <column name="FEC_ANTIGUEDAD" length="23" />
+        </property>
+        <property name="fecExtras" type="timestamp">
+            <column name="FEC_EXTRAS" length="23" />
+        </property>
+        <property name="numMatricula" type="string">
+            <column name="NUM_MATRICULA" length="5" />
+        </property>
+        <property name="numPluriempleo" type="string">
+            <column name="NUM_PLURIEMPLEO" length="15" />
+        </property>
+        <property name="numHijosIrpf" type="string">
+            <column name="NUM_HIJOS_IRPF" length="2" />
+        </property>
+        <property name="idClavePercep" type="char">
+            <column name="ID_CLAVE_PERCEP" length="1" not-null="true" />
+        </property>
+        <property name="comentBaja" type="string">
+            <column name="COMENT_BAJA" />
+        </property>
+        <property name="extensionTelef" type="string">
+            <column name="EXTENSION_TELEF" length="10" />
+        </property>
+        <property name="direccionMail" type="string">
+            <column name="DIRECCION_MAIL" length="50" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="idMotivoBaja" type="string">
+            <column name="ID_MOTIVO_BAJA" length="4" not-null="true" />
+        </property>
+        <property name="idEstadoNomina" type="string">
+            <column name="ID_ESTADO_NOMINA" length="10" not-null="true" />
+        </property>
+        <property name="idEstadoPlantill" type="string">
+            <column name="ID_ESTADO_PLANTILL" length="4" not-null="true" />
+        </property>
+        <property name="idMotivoBajaSs" type="string">
+            <column name="ID_MOTIVO_BAJA_SS" length="2" not-null="true" />
+        </property>
+        <property name="fecRetroacSt" type="timestamp">
+            <column name="FEC_RETROAC_ST" length="23" />
+        </property>
+        <property name="fecIndRetColSt" type="timestamp">
+            <column name="FEC_IND_RET_COL_ST" length="23" />
+        </property>
+        <property name="desactRetIndSt" type="boolean">
+            <column name="DESACT_RET_IND_ST" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="desactRetColSt" type="boolean">
+            <column name="DESACT_RET_COL_ST" precision="1" scale="0" not-null="true" />
+        </property>
+        <property name="fecTeorFinV" type="timestamp">
+            <column name="FEC_TEOR_FIN_V" length="23" />
+        </property>
+        <property name="idMotBajaInem" type="string">
+            <column name="ID_MOT_BAJA_INEM" length="2" not-null="true" />
+        </property>
+        <property name="fecFinEfectoCe" type="timestamp">
+            <column name="FEC_FIN_EFECTO_CE" length="23" />
+        </property>
+        <property name="numEre" type="string">
+            <column name="NUM_ERE" length="12" />
+        </property>
+        <property name="condDiscTrab" type="java.lang.Character">
+            <column name="COND_DISC_TRAB" length="1" />
+        </property>
+        <property name="idCnoCe" type="string">
+            <column name="ID_CNO_CE" length="10" />
+        </property>
+        <property name="NCnoCe" type="string">
+            <column name="N_CNO_CE" length="200" />
+        </property>
+        <property name="tipoJornd1" type="string">
+            <column name="TIPO_JORND_1" length="4" />
+        </property>
+        <property name="diasJornd1" type="string">
+            <column name="DIAS_JORND_1" length="5" />
+        </property>
+        <property name="fecIniJornd1" type="string">
+            <column name="FEC_INI_JORND_1" length="10" />
+        </property>
+        <property name="fecFinJornd1" type="string">
+            <column name="FEC_FIN_JORND_1" length="10" />
+        </property>
+        <property name="tipoJornd2" type="string">
+            <column name="TIPO_JORND_2" length="4" />
+        </property>
+        <property name="diasJornd2" type="string">
+            <column name="DIAS_JORND_2" length="5" />
+        </property>
+        <property name="fecIniJornd2" type="string">
+            <column name="FEC_INI_JORND_2" length="10" />
+        </property>
+        <property name="fecFinJornd2" type="string">
+            <column name="FEC_FIN_JORND_2" length="10" />
+        </property>
+        <property name="tipoJornd3" type="string">
+            <column name="TIPO_JORND_3" length="4" />
+        </property>
+        <property name="diasJornd3" type="string">
+            <column name="DIAS_JORND_3" length="5" />
+        </property>
+        <property name="fecIniJornd3" type="string">
+            <column name="FEC_INI_JORND_3" length="10" />
+        </property>
+        <property name="fecFinJornd3" type="string">
+            <column name="FEC_FIN_JORND_3" length="10" />
+        </property>
+        <property name="tipoJornd4" type="string">
+            <column name="TIPO_JORND_4" length="4" />
+        </property>
+        <property name="diasJornd4" type="string">
+            <column name="DIAS_JORND_4" length="5" />
+        </property>
+        <property name="fecIniJornd4" type="string">
+            <column name="FEC_INI_JORND_4" length="10" />
+        </property>
+        <property name="fecFinJornd4" type="string">
+            <column name="FEC_FIN_JORND_4" length="10" />
+        </property>
+        <property name="genCertificado" type="string">
+            <column name="GEN_CERTIFICADO" length="1" not-null="true" />
+        </property>
+        <property name="fecIniBonCm" type="timestamp">
+            <column name="FEC_INI_BON_CM" length="23" />
+        </property>
+        <property name="fecFinBonCm" type="timestamp">
+            <column name="FEC_FIN_BON_CM" length="23" />
+        </property>
+        <property name="porEreParc" type="big_decimal">
+            <column name="POR_ERE_PARC" precision="14" scale="4" />
+        </property>
+        <set name="m4tHistDepartams" table="M4T_HIST_DEPARTAM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistDepartam" />
+        </set>
+        <set name="m4tHistPuestoses" table="M4T_HIST_PUESTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistPuestos" />
+        </set>
+        <set name="m4tDatosPagos" table="M4T_DATOS_PAGO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tDatosPago" />
+        </set>
+        <set name="m4tHistUnidOrgs" table="M4T_HIST_UNID_ORG" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistUnidOrg" />
+        </set>
+        <set name="m4tAbsentismoses" table="M4T_ABSENTISMOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tAbsentismos" />
+        </set>
+        <set name="m4tHistCentTrabs" table="M4T_HIST_CENT_TRAB" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+                <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistCentTrab" />
+        </set>
+    </class>
+</hibernate-mapping>

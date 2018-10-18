@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Equilibrha - WebSocket Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript"src="websocket.js"/></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <section  class="container">
+        <h1>Equilibrha - WebSocket Test</h1>
+        <div>
+            <div class="progress-container">
+                <form id="form">
+                    <input id="open" type="button" value="Conectarse" onclick="Open();"/>
+                    <input id="close" type="button" value="Desconectarse" onclick="Close();"/>
+                    
+                    <label for="progress" id="lblProgress"></label>
+                </form>
+            </div>
+           
+            <div id="divTextBox">
+            		<textarea id="textBox" rows="15" cols="70"></textarea>
+            		<button id="sendBtn" onclick="formSubmit()" class = "btn btn-primary">Enviar</button>
+            		
+            </div>
+            
+                    <div id="chatBox" class= "container-fluid">
+                        </div>
+        </div>
+    </section>
+</body>
+</html>

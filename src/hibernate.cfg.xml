@@ -1,0 +1,68 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+  "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>  
+  
+    <session-factory>  
+  
+<!--     172.20.2.42   -->
+  
+        <property name="connection.url">jdbc:mysql://localhost:3306/movilidad</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.pool_size">500</property>  
+        <property name="connection.username">movilidad</property>
+        <property name="connection.password">movilidad</property>
+        <property name="connection.autoReconnect">true</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.autoReconnectForPools">true</property>
+		<property name="connection..provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">28680</property>
+		<property name="hibernate.c3p0.idleConnectionTestPeriod">300</property>
+		<property name="hibernate.c3p0.maxConnectionAge">5600</property>
+		<property name="hibernate.c3p0.timeout">5000</property>
+		<property name="hibernate.c3p0.max_size">50</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.preferredTestQuery">select 1;</property>
+		<property name="hibernate.c3p0.testConnectionOnCheckout">true</property>
+		<property name="hibernate.c3p0.checkoutTimeout">10000</property>
+		<property name="hibernate.c3p0.testConnectionOnCheckin">true</property>
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.use_sql_comments">false</property>
+        <property name="hibernate.format_sql">true</property>
+            
+       
+       <!--  Equilibrha: Metemos las entidades que podemos usar en la session    -->
+       
+       
+        <mapping class="com.common.hibernate.entidades.VinDevices" />
+        <mapping class="com.common.hibernate.entidades.VinParamsProcess" />
+        <mapping class="com.common.hibernate.entidades.VinUsersSystem" />
+        <mapping class="com.common.hibernate.entidades.VinParamsSystem" />
+        <mapping class="com.common.hibernate.entidades.VinStatistics" />
+        <mapping class="com.common.hibernate.entidades.VinSystems" />
+        <mapping class="com.common.hibernate.entidades.VinUsers" />
+        <mapping class="com.common.hibernate.entidades.VinUsersView" />
+        <mapping class="com.common.hibernate.entidades.VinNotifications" />
+        <mapping class="com.common.hibernate.entidades.VinParamsDevice" />
+        <mapping class="com.common.hibernate.entidades.VinParamsRole" />
+        <mapping class="com.common.hibernate.entidades.VinLogs" />
+        <mapping class="com.common.hibernate.entidades.VinProcess" />
+        <mapping class="com.common.hibernate.entidades.VinProcessView" />
+        <mapping class="com.common.hibernate.entidades.VinParamsUser" />
+        <mapping class="com.common.hibernate.entidades.VinRoles" />
+        <mapping class="com.common.hibernate.entidades.VinParamsGlobal" />  
+        <mapping class="com.common.hibernate.entidades.VinParamsProcessView" />
+        <mapping class="com.common.hibernate.entidades.VinParamsDeviceView" />
+        <mapping class="com.common.hibernate.entidades.VinParamsRoleView" />
+        <mapping class="com.common.hibernate.entidades.VinParamsSystemView" />
+        <mapping class="com.common.hibernate.entidades.VinParamsUserView" />
+        <mapping class="com.common.hibernate.entidades.VinStatisticsView" />
+        
+             
+       
+</session-factory>
+</hibernate-configuration>
+  

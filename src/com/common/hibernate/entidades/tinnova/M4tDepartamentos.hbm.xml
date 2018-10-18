@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tDepartamentos" table="M4T_DEPARTAMENTOS" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tDepartamentosId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idDepartamento" type="string">
+                <column name="ID_DEPARTAMENTO" length="8" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="m4tEmpleadosByFkEmplDptosResps" class="com.common.hibernate.entidades.tinnova.M4tEmpleados" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_RESPONS_RESP" length="10" />
+        </many-to-one>
+        <many-to-one name="m4tEmpleadosByFkEmpleadDeptos" class="com.common.hibernate.entidades.tinnova.M4tEmpleados" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_RESPONSABLE" length="10" not-null="true" />
+        </many-to-one>
+        <property name="NDepartamento" type="string">
+            <column name="N_DEPARTAMENTO" length="40" not-null="true" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <set name="m4tHistDepartams" table="M4T_HIST_DEPARTAM" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_DEPARTAMENTO" length="8" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistDepartam" />
+        </set>
+    </class>
+</hibernate-mapping>

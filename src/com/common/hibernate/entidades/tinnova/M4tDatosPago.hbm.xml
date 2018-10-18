@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tDatosPago" table="M4T_DATOS_PAGO" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tDatosPagoId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+            <key-property name="fecAltaEmpleado" type="timestamp">
+                <column name="FEC_ALTA_EMPLEADO" length="23" />
+            </key-property>
+            <key-property name="idDatoPago" type="short">
+                <column name="ID_DATO_PAGO" precision="3" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="m4tFasesAlta" class="com.common.hibernate.entidades.tinnova.M4tFasesAlta" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_EMPLEADO" length="10" not-null="true" />
+            <column name="FEC_ALTA_EMPLEADO" length="23" not-null="true" />
+        </many-to-one>
+        <property name="fecInicio" type="timestamp">
+            <column name="FEC_INICIO" length="23" />
+        </property>
+        <property name="fecFin" type="timestamp">
+            <column name="FEC_FIN" length="23" />
+        </property>
+        <property name="idBanco" type="string">
+            <column name="ID_BANCO" length="4" not-null="true" />
+        </property>
+        <property name="idAgencia" type="string">
+            <column name="ID_AGENCIA" length="4" not-null="true" />
+        </property>
+        <property name="numCuenta" type="string">
+            <column name="NUM_CUENTA" length="10" />
+        </property>
+        <property name="idFormaPago" type="string">
+            <column name="ID_FORMA_PAGO" length="10" not-null="true" />
+        </property>
+        <property name="idCentroPago" type="string">
+            <column name="ID_CENTRO_PAGO" length="10" not-null="true" />
+        </property>
+        <property name="idTipoBenefic" type="string">
+            <column name="ID_TIPO_BENEFIC" length="10" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="40" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="APELLIDO_1" length="40" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="APELLIDO_2" length="40" />
+        </property>
+        <property name="idLegal" type="string">
+            <column name="ID_LEGAL" length="10" />
+        </property>
+        <property name="viaPublica" type="string">
+            <column name="VIA_PUBLICA" length="30" />
+        </property>
+        <property name="numVia" type="string">
+            <column name="NUM_VIA" length="5" />
+        </property>
+        <property name="distritoPostal" type="string">
+            <column name="DISTRITO_POSTAL" length="5" />
+        </property>
+        <property name="poblacion" type="string">
+            <column name="POBLACION" length="25" />
+        </property>
+        <property name="idSubdivGeograf" type="byte">
+            <column name="ID_SUBDIV_GEOGRAF" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="idSiglaDomicilio" type="string">
+            <column name="ID_SIGLA_DOMICILIO" length="2" not-null="true" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="idMoneda" type="string">
+            <column name="ID_MONEDA" length="20" />
+        </property>
+        <property name="literalReg7" type="string">
+            <column name="LITERAL_REG_7" length="140" />
+        </property>
+        <property name="digitoControlSt" type="string">
+            <column name="DIGITO_CONTROL_ST" length="2" />
+        </property>
+        <property name="codOrgJudSt" type="string">
+            <column name="COD_ORG_JUD_ST" length="4" />
+        </property>
+        <property name="NCodOrgJudSt" type="string">
+            <column name="N_COD_ORG_JUD_ST" length="44" />
+        </property>
+        <property name="codOrgJudProSt" type="string">
+            <column name="COD_ORG_JUD_PRO_ST" length="4" />
+        </property>
+        <property name="tpProcedimientSt" type="string">
+            <column name="TP_PROCEDIMIENT_ST" length="2" />
+        </property>
+        <property name="idExpedienteSt" type="string">
+            <column name="ID_EXPEDIENTE_ST" length="4" />
+        </property>
+        <property name="anioExpedSt" type="string">
+            <column name="ANIO_EXPED_ST" length="2" />
+        </property>
+        <property name="digControlSt" type="string">
+            <column name="DIG_CONTROL_ST" length="1" />
+        </property>
+        <property name="tpConceptoSt" type="string">
+            <column name="TP_CONCEPTO_ST" length="2" />
+        </property>
+        <property name="descTpCptoSt" type="string">
+            <column name="DESC_TP_CPTO_ST" length="40" />
+        </property>
+        <property name="cptoOrden" type="string">
+            <column name="CPTO_ORDEN" length="1" />
+        </property>
+        <property name="idNacionIban" type="string">
+            <column name="ID_NACION_IBAN" length="3" />
+        </property>
+        <property name="codigoIban" type="string">
+            <column name="CODIGO_IBAN" length="24" />
+        </property>
+        <property name="codigoBic" type="string">
+            <column name="CODIGO_BIC" length="11" />
+        </property>
+    </class>
+</hibernate-mapping>

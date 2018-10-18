@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4Empleados" table="M4_EMPLEADOS" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4EmpleadosId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+            <key-property name="nombre" type="string">
+                <column name="NOMBRE" length="17" />
+            </key-property>
+            <key-property name="apellido1" type="string">
+                <column name="APELLIDO_1" length="20" />
+            </key-property>
+            <key-property name="apellido2" type="string">
+                <column name="APELLIDO_2" length="20" />
+            </key-property>
+            <key-property name="numPasaporte" type="string">
+                <column name="NUM_PASAPORTE" length="20" />
+            </key-property>
+            <key-property name="numAfiliacionSs" type="string">
+                <column name="NUM_AFILIACION_SS" length="12" />
+            </key-property>
+            <key-property name="fecNacimiento" type="timestamp">
+                <column name="FEC_NACIMIENTO" length="23" />
+            </key-property>
+            <key-property name="poblacNacimiento" type="string">
+                <column name="POBLAC_NACIMIENTO" length="25" />
+            </key-property>
+            <key-property name="coment" type="string">
+                <column name="COMENT" />
+            </key-property>
+            <key-property name="nivelSeguridad" type="java.lang.Byte">
+                <column name="NIVEL_SEGURIDAD" precision="2" scale="0" />
+            </key-property>
+            <key-property name="fecUltActualizac" type="timestamp">
+                <column name="FEC_ULT_ACTUALIZAC" length="23" />
+            </key-property>
+            <key-property name="idUsuario" type="string">
+                <column name="ID_USUARIO" length="40" />
+            </key-property>
+            <key-property name="idLegal" type="string">
+                <column name="ID_LEGAL" length="10" />
+            </key-property>
+            <key-property name="idNacion" type="string">
+                <column name="ID_NACION" length="3" />
+            </key-property>
+            <key-property name="idSexo" type="char">
+                <column name="ID_SEXO" length="1" />
+            </key-property>
+            <key-property name="idEstadoCivil" type="char">
+                <column name="ID_ESTADO_CIVIL" length="1" />
+            </key-property>
+            <key-property name="idNacionalidad" type="string">
+                <column name="ID_NACIONALIDAD" length="3" />
+            </key-property>
+            <key-property name="idAgrupSeguridad" type="string">
+                <column name="ID_AGRUP_SEGURIDAD" length="10" />
+            </key-property>
+            <key-property name="idSubdivNacimien" type="byte">
+                <column name="ID_SUBDIV_NACIMIEN" precision="2" scale="0" />
+            </key-property>
+            <key-property name="idTipIdLegalSt" type="char">
+                <column name="ID_TIP_ID_LEGAL_ST" length="1" />
+            </key-property>
+            <key-property name="idLegalRepSt" type="string">
+                <column name="ID_LEGAL_REP_ST" length="10" />
+            </key-property>
+            <key-property name="paisEmisorSt" type="string">
+                <column name="PAIS_EMISOR_ST" length="3" />
+            </key-property>
+            <key-property name="cancelDatPer" type="string">
+                <column name="CANCEL_DAT_PER" length="1" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

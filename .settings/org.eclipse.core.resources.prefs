@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/com/portalmobile/meta4/schemas/CSP_MBL_SOAP_SERVER_INFOSoapBindingStub.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/Csp_Mbl_Soap_Server_InfoService.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/Csp_Mbl_Soap_Server_InfoServiceService.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/Csp_Mbl_Soap_Server_InfoServiceServiceLocator.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/types/Csp_Get_Session_M4_ValueOutput.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/types/Csp_Mbl_Soap_Server_InfoBlock.java=UTF-8
+encoding//src/com/portalmobile/meta4/schemas/types/Csp_Mbl_Soap_Server_InfoRecord.java=UTF-8
+encoding//src/com/portalmobile/meta4/soapservices/exception/M4SoapException.java=UTF-8

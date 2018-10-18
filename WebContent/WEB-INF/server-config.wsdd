@@ -1,0 +1,316 @@
+<ns1:deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java" xmlns:ns1="http://xml.apache.org/axis/wsdd/">
+ <ns1:globalConfiguration>
+  <ns1:parameter name="sendMultiRefs" value="true"/>
+  <ns1:parameter name="disablePrettyXML" value="true"/>
+  <ns1:parameter name="adminPassword" value="admin"/>
+  <ns1:parameter name="attachments.Directory" value="/Users/joseluisbustosesteban/portalMobileV1/backendmobilev1/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/backendmovilidad/WEB-INF/attachments"/>
+  <ns1:parameter name="dotNetSoapEncFix" value="true"/>
+  <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <ns1:parameter name="sendXMLDeclaration" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:requestFlow>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="session"/>
+   </ns1:handler>
+   <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
+    <ns1:parameter name="scope" value="request"/>
+    <ns1:parameter name="extension" value=".jwr"/>
+   </ns1:handler>
+  </ns1:requestFlow>
+ </ns1:globalConfiguration>
+ <ns1:handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <ns1:handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <ns1:service name="AdminService" provider="java:MSG">
+  <ns1:parameter name="allowedMethods" value="AdminService"/>
+  <ns1:parameter name="enableRemoteAdmin" value="false"/>
+  <ns1:parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <ns1:namespace>http://xml.apache.org/axis/wsdd/</ns1:namespace>
+ </ns1:service>
+ <ns1:service name="WebServiceNotifications" provider="java:RPC" style="wrapped" use="literal">
+  <ns2:operation name="getListaNotificacionesLOCAL" qname="ns1:getListaNotificacionesLOCAL" returnQName="ns1:getListaNotificacionesLOCALReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:StrCredentials" type="xsd:string"/>
+  </ns2:operation>
+  <ns1:operation name="sendPushNotificationChannel" qname="ns2:sendPushNotificationChannel" returnQName="ns2:sendPushNotificationChannelReturn" returnType="xsd:boolean" soapAction="" xmlns:ns2="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns2:channel" type="xsd:string"/>
+   <ns1:parameter qname="ns2:message" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="sendPushNotificationTinnova" qname="ns3:sendPushNotificationTinnova" returnQName="ns3:sendPushNotificationTinnovaReturn" returnType="xsd:boolean" soapAction="" xmlns:ns3="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns3:idEmpleado" type="xsd:string"/>
+   <ns1:parameter qname="ns3:sociedad" type="xsd:string"/>
+   <ns1:parameter qname="ns3:message" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="addNotification" qname="ns4:addNotification" returnQName="ns4:addNotificationReturn" returnType="xsd:boolean" soapAction="" xmlns:ns4="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns4:localUser" type="xsd:string"/>
+   <ns1:parameter qname="ns4:title" type="xsd:string"/>
+   <ns1:parameter qname="ns4:message" type="xsd:string"/>
+   <ns1:parameter qname="ns4:daysExpire" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="sendPushNotification" qname="ns5:sendPushNotification" returnQName="ns5:sendPushNotificationReturn" returnType="xsd:boolean" soapAction="" xmlns:ns5="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns5:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns5:localUser" type="xsd:string"/>
+   <ns1:parameter qname="ns5:message" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="addNotificationFindUser" qname="ns6:addNotificationFindUser" returnQName="ns6:addNotificationFindUserReturn" returnType="xsd:boolean" soapAction="" xmlns:ns6="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns6:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns6:nif" type="xsd:string"/>
+   <ns1:parameter qname="ns6:id_empleado" type="xsd:string"/>
+   <ns1:parameter qname="ns6:fase_alta" type="xsd:string"/>
+   <ns1:parameter qname="ns6:title" type="xsd:string"/>
+   <ns1:parameter qname="ns6:message" type="xsd:string"/>
+   <ns1:parameter qname="ns6:daysExpire" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="setNotificationRead" qname="ns7:setNotificationRead" returnQName="ns7:setNotificationReadReturn" returnType="xsd:boolean" soapAction="" xmlns:ns7="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns7:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns7:localUser" type="xsd:string"/>
+   <ns1:parameter qname="ns7:ordinal" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="setNotificationDeleted" qname="ns8:setNotificationDeleted" returnQName="ns8:setNotificationDeletedReturn" returnType="xsd:boolean" soapAction="" xmlns:ns8="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns8:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns8:localUser" type="xsd:string"/>
+   <ns1:parameter qname="ns8:ordinal" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:operation name="controlSession" qname="ns9:controlSession" returnQName="ns9:controlSessionReturn" returnType="xsd:string" soapAction="" xmlns:ns9="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns9:serialKey64" type="xsd:string"/>
+   <ns1:parameter qname="ns9:serialCredentials64" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="ping" qname="ns10:ping" returnQName="ns10:pingReturn" returnType="xsd:int" soapAction="" xmlns:ns10="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="addNotificationFindUser setNotificationRead setNotificationDeleted addNotification ping sendPushNotificationChannel getListaNotificacionesLOCAL sendPushNotification controlSession sendPushNotificationTinnova"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="WebServiceNotifications"/>
+  <ns1:parameter name="className" value="com.common.webservices.WebServiceNotifications"/>
+  <ns1:parameter name="wsdlServicePort" value="WebServiceNotifications"/>
+  <ns1:parameter name="schemaQualified" value="http://webservices.equilibrha.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://webservices.equilibrha.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="WebServiceNotificationsService"/>
+ </ns1:service>
+ <ns1:service name="Version" provider="java:RPC">
+  <ns1:parameter name="allowedMethods" value="getVersion"/>
+  <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="WebController" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="pingWC" qname="ns11:pingWC" returnQName="ns11:pingWCReturn" returnType="xsd:int" soapAction="" xmlns:ns11="http://controllerWS.conectividad.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="getUserActives" qname="ns12:getUserActives" returnQName="ns12:getUserActivesReturn" returnType="xsd:double" soapAction="" xmlns:ns12="http://controllerWS.conectividad.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="getUserActives pingWC"/>
+  <ns1:parameter name="wsdlPortType" value="WebController"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://controllerWS.conectividad.equilibrha.com"/>
+  <ns1:parameter name="wsdlServicePort" value="WebController"/>
+  <ns1:parameter name="className" value="com.common.webservices.controller.WebController"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://controllerWS.conectividad.equilibrha.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="WebControllerService"/>
+ </ns1:service>
+ <ns1:service name="WebServiceMobile" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="meta4AddAbsentismoEmpleado" qname="ns13:meta4AddAbsentismoEmpleado" returnQName="ns13:meta4AddAbsentismoEmpleadoReturn" returnType="xsd:double" soapAction="" xmlns:ns13="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns13:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns13:IdHr" type="xsd:string"/>
+   <ns1:parameter qname="ns13:periodo" type="xsd:string"/>
+   <ns1:parameter qname="ns13:fechaIni" type="xsd:string"/>
+   <ns1:parameter qname="ns13:fechaFin" type="xsd:string"/>
+   <ns1:parameter qname="ns13:idIncidence" type="xsd:string"/>
+   <ns1:parameter qname="ns13:Comentario" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4MssGetMyQueryMetaData" qname="ns14:meta4MssGetMyQueryMetaData" returnQName="ns14:meta4MssGetMyQueryMetaDataReturn" returnType="xsd:string" soapAction="" xmlns:ns14="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns14:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns14:idMeta4Object" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetListaNotificaciones" qname="ns15:meta4GetListaNotificaciones" returnQName="ns15:meta4GetListaNotificacionesReturn" returnType="xsd:string" soapAction="" xmlns:ns15="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns15:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns15:OrdinalNotificacion" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4SaveNotificacionLeida" qname="ns16:meta4SaveNotificacionLeida" returnQName="ns16:meta4SaveNotificacionLeidaReturn" returnType="xsd:string" soapAction="" xmlns:ns16="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns16:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns16:OrdinalNotificacion" type="xsd:double"/>
+   <ns1:parameter qname="ns16:System" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getMssListaSolicAbsentPorValidar" qname="ns17:getMssListaSolicAbsentPorValidar" returnQName="ns17:getMssListaSolicAbsentPorValidarReturn" returnType="xsd:string" soapAction="" xmlns:ns17="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns17:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns17:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns17:optional" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="chgPasswordForgetAndSendByEmail" qname="ns18:chgPasswordForgetAndSendByEmail" returnQName="ns18:chgPasswordForgetAndSendByEmailReturn" returnType="xsd:double" soapAction="" xmlns:ns18="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns18:mail" type="xsd:string"/>
+   <ns1:parameter qname="ns18:numDoc" type="xsd:string"/>
+   <ns1:parameter qname="ns18:PrimApp" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getProductVersion" qname="ns19:getProductVersion" returnQName="ns19:getProductVersionReturn" returnType="xsd:string" soapAction="" xmlns:ns19="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="meta4GetFichaEmpleado" qname="ns20:meta4GetFichaEmpleado" returnQName="ns20:meta4GetFichaEmpleadoReturn" returnType="xsd:string" soapAction="" xmlns:ns20="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns20:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns20:IdEmpleadoMeta4" type="xsd:string"/>
+   <ns1:parameter qname="ns20:IdSociedadMeta4" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="essDownloadReciboNomina" qname="ns21:essDownloadReciboNomina" returnQName="ns21:essDownloadReciboNominaReturn" returnType="xsd:string" soapAction="" xmlns:ns21="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns21:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns21:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns21:fechaPago" type="xsd:string"/>
+   <ns1:parameter qname="ns21:fechaAlloc" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetInfoUserApp" qname="ns22:meta4GetInfoUserApp" returnQName="ns22:meta4GetInfoUserAppReturn" returnType="xsd:string" soapAction="" xmlns:ns22="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns22:StrCredentials" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4DelFavoriteRh" qname="ns23:meta4DelFavoriteRh" returnQName="ns23:meta4DelFavoriteRhReturn" returnType="xsd:double" soapAction="" xmlns:ns23="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns23:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns23:IdEmpleadoMeta4" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="addEssNewSolAbsentismo" qname="ns24:addEssNewSolAbsentismo" returnQName="ns24:addEssNewSolAbsentismoReturn" returnType="xsd:string" soapAction="" xmlns:ns24="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns24:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns24:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns24:idAbsentismo" type="xsd:string"/>
+   <ns1:parameter qname="ns24:inicio" type="xsd:string"/>
+   <ns1:parameter qname="ns24:fin" type="xsd:string"/>
+   <ns1:parameter qname="ns24:comentarios" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4MssExecQuery" qname="ns25:meta4MssExecQuery" returnQName="ns25:meta4MssExecQueryReturn" returnType="xsd:string" soapAction="" xmlns:ns25="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns25:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns25:idMeta4Object" type="xsd:string"/>
+   <ns1:parameter qname="ns25:params" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getEssMisNoticias" qname="ns26:getEssMisNoticias" returnQName="ns26:getEssMisNoticiasReturn" returnType="xsd:string" soapAction="" xmlns:ns26="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns26:StrCredentials" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getEssDatosBancarios" qname="ns27:getEssDatosBancarios" returnQName="ns27:getEssDatosBancariosReturn" returnType="xsd:string" soapAction="" xmlns:ns27="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns27:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns27:IdHr" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getEssMisAbsentismos" qname="ns28:getEssMisAbsentismos" returnQName="ns28:getEssMisAbsentismosReturn" returnType="xsd:string" soapAction="" xmlns:ns28="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns28:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns28:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns28:year" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4DelNotificacion" qname="ns29:meta4DelNotificacion" returnQName="ns29:meta4DelNotificacionReturn" returnType="xsd:string" soapAction="" xmlns:ns29="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns29:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns29:OrdinalNotificacion" type="xsd:double"/>
+   <ns1:parameter qname="ns29:System" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="essDelSolAbsentismo" qname="ns30:essDelSolAbsentismo" returnQName="ns30:essDelSolAbsentismoReturn" returnType="xsd:string" soapAction="" xmlns:ns30="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns30:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns30:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns30:ordinal" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="getListTypeDocsSend" qname="ns31:getListTypeDocsSend" returnQName="ns31:getListTypeDocsSendReturn" returnType="xsd:string" soapAction="" xmlns:ns31="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns31:StrCredentials" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4AddFavoriteRh" qname="ns32:meta4AddFavoriteRh" returnQName="ns32:meta4AddFavoriteRhReturn" returnType="xsd:double" soapAction="" xmlns:ns32="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns32:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns32:IdEmpleadoMeta4" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetImageCacheURL" qname="ns33:meta4GetImageCacheURL" returnQName="ns33:meta4GetImageCacheURLReturn" returnType="xsd:string" soapAction="" xmlns:ns33="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns33:idfoto" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4Logout" qname="ns34:meta4Logout" returnQName="ns34:meta4LogoutReturn" returnType="xsd:int" soapAction="" xmlns:ns34="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns34:Meta4SessionId" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="sendFileRh" qname="ns35:sendFileRh" returnQName="ns35:sendFileRhReturn" returnType="xsd:int" soapAction="" xmlns:ns35="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns35:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns35:fileBase64" type="xsd:string"/>
+   <ns1:parameter qname="ns35:extension" type="xsd:string"/>
+   <ns1:parameter qname="ns35:IdHr" type="xsd:string"/>
+   <ns1:parameter qname="ns35:tpFile" type="xsd:string"/>
+   <ns1:parameter qname="ns35:commentsEmployee" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getAppVersionValidation" qname="ns36:getAppVersionValidation" returnQName="ns36:getAppVersionValidationReturn" returnType="xsd:string" soapAction="" xmlns:ns36="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns36:tipoDevice" type="xsd:string"/>
+   <ns1:parameter qname="ns36:AppVersionUser" type="xsd:string"/>
+   <ns1:parameter qname="ns36:ProductVersionApp" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4DelFileUser" qname="ns37:meta4DelFileUser" returnQName="ns37:meta4DelFileUserReturn" returnType="xsd:string" soapAction="" xmlns:ns37="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns37:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns37:OrdinalFile" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetListaFilesUser" qname="ns38:meta4GetListaFilesUser" returnQName="ns38:meta4GetListaFilesUserReturn" returnType="xsd:string" soapAction="" xmlns:ns38="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns38:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns38:OrdinalFile" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="setMssAceptarSolicAbs" qname="ns39:setMssAceptarSolicAbs" returnQName="ns39:setMssAceptarSolicAbsReturn" returnType="xsd:string" soapAction="" xmlns:ns39="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns39:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns39:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns39:ordinal" type="xsd:double"/>
+   <ns1:parameter qname="ns39:motivo" type="xsd:string"/>
+   <ns1:parameter qname="ns39:optional" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4SaveFileLeido" qname="ns40:meta4SaveFileLeido" returnQName="ns40:meta4SaveFileLeidoReturn" returnType="xsd:string" soapAction="" xmlns:ns40="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns40:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns40:OrdinalFile" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetListaEmpleados" qname="ns41:meta4GetListaEmpleados" returnQName="ns41:meta4GetListaEmpleadosReturn" returnType="xsd:string" soapAction="" xmlns:ns41="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns41:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns41:filters" type="xsd:string"/>
+   <ns1:parameter qname="ns41:paginaDatos" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetRealFileUser" qname="ns42:meta4GetRealFileUser" returnQName="ns42:meta4GetRealFileUserReturn" returnType="xsd:string" soapAction="" xmlns:ns42="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns42:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns42:OrdinalFile" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="meta4GetImageCache" qname="ns43:meta4GetImageCache" returnQName="ns43:meta4GetImageCacheReturn" returnType="xsd:string" soapAction="" xmlns:ns43="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns43:idFoto" type="xsd:string"/>
+   <ns1:parameter qname="ns43:idEmpleado" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4DashboardGetMenus" qname="ns44:meta4DashboardGetMenus" returnQName="ns44:meta4DashboardGetMenusReturn" returnType="xsd:string" soapAction="" xmlns:ns44="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns44:StrCredentials" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="meta4MssGetMyQueries" qname="ns45:meta4MssGetMyQueries" returnQName="ns45:meta4MssGetMyQueriesReturn" returnType="xsd:string" soapAction="" xmlns:ns45="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns45:StrCredentials" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="chgPasswordUserApp" qname="ns46:chgPasswordUserApp" returnQName="ns46:chgPasswordUserAppReturn" returnType="xsd:double" soapAction="" xmlns:ns46="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns46:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns46:newPass" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="setMssCancelSolicAbs" qname="ns47:setMssCancelSolicAbs" returnQName="ns47:setMssCancelSolicAbsReturn" returnType="xsd:string" soapAction="" xmlns:ns47="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns47:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns47:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns47:ordinal" type="xsd:double"/>
+   <ns1:parameter qname="ns47:motivo" type="xsd:string"/>
+   <ns1:parameter qname="ns47:optional" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="getEssRecibosNomina" qname="ns48:getEssRecibosNomina" returnQName="ns48:getEssRecibosNominaReturn" returnType="xsd:string" soapAction="" xmlns:ns48="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns48:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns48:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns48:year" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="getMSSMisEmpleados" qname="ns49:getMSSMisEmpleados" returnQName="ns49:getMSSMisEmpleadosReturn" returnType="xsd:string" soapAction="" xmlns:ns49="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns49:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns49:IdHR" type="xsd:string"/>
+   <ns1:parameter qname="ns49:filters" type="xsd:string"/>
+   <ns1:parameter qname="ns49:PaginaDatos" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="getEssWhoIsWho" qname="ns50:getEssWhoIsWho" returnQName="ns50:getEssWhoIsWhoReturn" returnType="xsd:string" soapAction="" xmlns:ns50="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns50:StrCredentials" type="xsd:string"/>
+   <ns1:parameter qname="ns50:filters" type="xsd:string"/>
+   <ns1:parameter qname="ns50:PaginaDatos" type="xsd:double"/>
+  </ns1:operation>
+  <ns1:operation name="controlSession" qname="ns51:controlSession" returnQName="ns51:controlSessionReturn" returnType="xsd:string" soapAction="" xmlns:ns51="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns51:serialKey64" type="xsd:string"/>
+   <ns1:parameter qname="ns51:serialCredentials64" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:operation name="ping" qname="ns52:ping" returnQName="ns52:pingReturn" returnType="xsd:int" soapAction="" xmlns:ns52="http://webservices.equilibrha.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:parameter name="allowedMethods" value="meta4DelFileUser meta4GetListaFilesUser meta4GetFichaEmpleado essDelSolAbsentismo getListTypeDocsSend meta4MssGetMyQueries ping meta4GetRealFileUser controlSession getProductVersion getEssRecibosNomina essDownloadReciboNomina chgPasswordUserApp meta4MssExecQuery meta4AddAbsentismoEmpleado meta4Logout setMssAceptarSolicAbs getMssListaSolicAbsentPorValidar getEssMisAbsentismos getMSSMisEmpleados meta4MssGetMyQueryMetaData getEssDatosBancarios chgPasswordForgetAndSendByEmail sendFileRh addEssNewSolAbsentismo meta4GetListaNotificaciones meta4DashboardGetMenus meta4GetImageCacheURL meta4SaveNotificacionLeida meta4AddFavoriteRh getEssMisNoticias meta4GetImageCache setMssCancelSolicAbs getAppVersionValidation meta4SaveFileLeido meta4GetInfoUserApp getEssWhoIsWho meta4GetListaEmpleados meta4DelFavoriteRh meta4DelNotificacion"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="WebServiceMobile"/>
+  <ns1:parameter name="className" value="com.common.webservices.WebServiceMobile"/>
+  <ns1:parameter name="wsdlServicePort" value="WebServiceMobile"/>
+  <ns1:parameter name="schemaQualified" value="http://webservices.equilibrha.com"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://webservices.equilibrha.com"/>
+  <ns1:parameter name="wsdlServiceElement" value="WebServiceMobileService"/>
+ </ns1:service>
+ <ns1:transport name="http">
+  <ns1:requestFlow>
+   <ns1:handler type="URLMapper"/>
+   <ns1:handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </ns1:requestFlow>
+  <ns1:parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <ns1:parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <ns1:parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <ns1:parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </ns1:transport>
+ <ns1:transport name="local">
+  <ns1:responseFlow>
+   <ns1:handler type="LocalResponder"/>
+  </ns1:responseFlow>
+ </ns1:transport>
+</ns1:deployment>

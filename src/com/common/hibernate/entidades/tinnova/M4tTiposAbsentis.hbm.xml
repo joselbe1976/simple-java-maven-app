@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tTiposAbsentis" table="M4T_TIPOS_ABSENTIS" schema="dbo" catalog="EMIND">
+        <id name="idTipoAbsentismo" type="string">
+            <column name="ID_TIPO_ABSENTISMO" length="2" />
+            <generator class="assigned" />
+        </id>
+        <property name="NTipoAbsentismo" type="string">
+            <column name="N_TIPO_ABSENTISMO" length="40" not-null="true" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="idTAbsenNomina" type="string">
+            <column name="ID_T_ABSEN_NOMINA" length="2" not-null="true" />
+        </property>
+        <set name="m4tAbsentismoses" table="M4T_ABSENTISMOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_TIPO_ABSENTISMO" length="2" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tAbsentismos" />
+        </set>
+    </class>
+</hibernate-mapping>

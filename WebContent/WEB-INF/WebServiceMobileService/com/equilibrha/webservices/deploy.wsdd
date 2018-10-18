@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebServiceMobileService WSDL service -->
+
+  <service name="WebServiceMobile" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://webservices.equilibrha.com"/>
+      <parameter name="wsdlServiceElement" value="WebServiceMobileService"/>
+      <parameter name="schemaQualified" value="http://webservices.equilibrha.com"/>
+      <parameter name="wsdlServicePort" value="WebServiceMobile"/>
+      <parameter name="className" value="com.common.webservices.WebServiceMobile"/>
+      <parameter name="wsdlPortType" value="WebServiceMobile"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4AddAbsentismoEmpleado" qname="operNS:meta4AddAbsentismoEmpleado" returnQName="retNS:meta4AddAbsentismoEmpleadoReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHr" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:periodo" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fechaIni" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fechaFin" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idIncidence" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Comentario" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4MssGetMyQueryMetaData" qname="operNS:meta4MssGetMyQueryMetaData" returnQName="retNS:meta4MssGetMyQueryMetaDataReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idMeta4Object" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetListaNotificaciones" qname="operNS:meta4GetListaNotificaciones" returnQName="retNS:meta4GetListaNotificacionesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalNotificacion" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4SaveNotificacionLeida" qname="operNS:meta4SaveNotificacionLeida" returnQName="retNS:meta4SaveNotificacionLeidaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalNotificacion" type="tns:double"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:System" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMssListaSolicAbsentPorValidar" qname="operNS:getMssListaSolicAbsentPorValidar" returnQName="retNS:getMssListaSolicAbsentPorValidarReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:optional" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="chgPasswordForgetAndSendByEmail" qname="operNS:chgPasswordForgetAndSendByEmail" returnQName="retNS:chgPasswordForgetAndSendByEmailReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:mail" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:numDoc" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PrimApp" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getProductVersion" qname="operNS:getProductVersion" returnQName="retNS:getProductVersionReturn" returnType="rtns:string" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetFichaEmpleado" qname="operNS:meta4GetFichaEmpleado" returnQName="retNS:meta4GetFichaEmpleadoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdEmpleadoMeta4" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdSociedadMeta4" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="essDownloadReciboNomina" qname="operNS:essDownloadReciboNomina" returnQName="retNS:essDownloadReciboNominaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fechaPago" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fechaAlloc" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetInfoUserApp" qname="operNS:meta4GetInfoUserApp" returnQName="retNS:meta4GetInfoUserAppReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4DelFavoriteRh" qname="operNS:meta4DelFavoriteRh" returnQName="retNS:meta4DelFavoriteRhReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdEmpleadoMeta4" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addEssNewSolAbsentismo" qname="operNS:addEssNewSolAbsentismo" returnQName="retNS:addEssNewSolAbsentismoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idAbsentismo" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:inicio" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fin" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:comentarios" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4MssExecQuery" qname="operNS:meta4MssExecQuery" returnQName="retNS:meta4MssExecQueryReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idMeta4Object" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:params" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEssMisNoticias" qname="operNS:getEssMisNoticias" returnQName="retNS:getEssMisNoticiasReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEssDatosBancarios" qname="operNS:getEssDatosBancarios" returnQName="retNS:getEssDatosBancariosReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHr" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEssMisAbsentismos" qname="operNS:getEssMisAbsentismos" returnQName="retNS:getEssMisAbsentismosReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:year" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4DelNotificacion" qname="operNS:meta4DelNotificacion" returnQName="retNS:meta4DelNotificacionReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalNotificacion" type="tns:double"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:System" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="essDelSolAbsentismo" qname="operNS:essDelSolAbsentismo" returnQName="retNS:essDelSolAbsentismoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ordinal" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getListTypeDocsSend" qname="operNS:getListTypeDocsSend" returnQName="retNS:getListTypeDocsSendReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4AddFavoriteRh" qname="operNS:meta4AddFavoriteRh" returnQName="retNS:meta4AddFavoriteRhReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdEmpleadoMeta4" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetImageCacheURL" qname="operNS:meta4GetImageCacheURL" returnQName="retNS:meta4GetImageCacheURLReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idfoto" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4Logout" qname="operNS:meta4Logout" returnQName="retNS:meta4LogoutReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Meta4SessionId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="sendFileRh" qname="operNS:sendFileRh" returnQName="retNS:sendFileRhReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:fileBase64" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:extension" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHr" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tpFile" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:commentsEmployee" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAppVersionValidation" qname="operNS:getAppVersionValidation" returnQName="retNS:getAppVersionValidationReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tipoDevice" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:AppVersionUser" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ProductVersionApp" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4DelFileUser" qname="operNS:meta4DelFileUser" returnQName="retNS:meta4DelFileUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalFile" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetListaFilesUser" qname="operNS:meta4GetListaFilesUser" returnQName="retNS:meta4GetListaFilesUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalFile" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setMssAceptarSolicAbs" qname="operNS:setMssAceptarSolicAbs" returnQName="retNS:setMssAceptarSolicAbsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ordinal" type="tns:double"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:motivo" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:optional" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4SaveFileLeido" qname="operNS:meta4SaveFileLeido" returnQName="retNS:meta4SaveFileLeidoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalFile" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetListaEmpleados" qname="operNS:meta4GetListaEmpleados" returnQName="retNS:meta4GetListaEmpleadosReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:filters" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:paginaDatos" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetRealFileUser" qname="operNS:meta4GetRealFileUser" returnQName="retNS:meta4GetRealFileUserReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:OrdinalFile" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4GetImageCache" qname="operNS:meta4GetImageCache" returnQName="retNS:meta4GetImageCacheReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idFoto" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:idEmpleado" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4DashboardGetMenus" qname="operNS:meta4DashboardGetMenus" returnQName="retNS:meta4DashboardGetMenusReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="meta4MssGetMyQueries" qname="operNS:meta4MssGetMyQueries" returnQName="retNS:meta4MssGetMyQueriesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="chgPasswordUserApp" qname="operNS:chgPasswordUserApp" returnQName="retNS:chgPasswordUserAppReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:newPass" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="setMssCancelSolicAbs" qname="operNS:setMssCancelSolicAbs" returnQName="retNS:setMssCancelSolicAbsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ordinal" type="tns:double"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:motivo" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:optional" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEssRecibosNomina" qname="operNS:getEssRecibosNomina" returnQName="retNS:getEssRecibosNominaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:year" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getMSSMisEmpleados" qname="operNS:getMSSMisEmpleados" returnQName="retNS:getMSSMisEmpleadosReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:IdHR" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:filters" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PaginaDatos" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getEssWhoIsWho" qname="operNS:getEssWhoIsWho" returnQName="retNS:getEssWhoIsWhoReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:StrCredentials" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:filters" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:PaginaDatos" type="tns:double"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="controlSession" qname="operNS:controlSession" returnQName="retNS:controlSessionReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:serialKey64" type="tns:string"/>
+        <parameter xmlns:pns="http://webservices.equilibrha.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:serialCredentials64" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://webservices.equilibrha.com" xmlns:retNS="http://webservices.equilibrha.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="ping" qname="operNS:ping" returnQName="retNS:pingReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="meta4DelFileUser meta4GetListaFilesUser meta4GetFichaEmpleado essDelSolAbsentismo getListTypeDocsSend meta4MssGetMyQueries ping meta4GetRealFileUser controlSession getProductVersion getEssRecibosNomina essDownloadReciboNomina chgPasswordUserApp meta4MssExecQuery meta4AddAbsentismoEmpleado meta4Logout setMssAceptarSolicAbs getMssListaSolicAbsentPorValidar getEssMisAbsentismos getMSSMisEmpleados meta4MssGetMyQueryMetaData getEssDatosBancarios chgPasswordForgetAndSendByEmail sendFileRh addEssNewSolAbsentismo meta4GetListaNotificaciones meta4DashboardGetMenus meta4GetImageCacheURL meta4SaveNotificacionLeida meta4AddFavoriteRh getEssMisNoticias meta4GetImageCache setMssCancelSolicAbs getAppVersionValidation meta4SaveFileLeido meta4GetInfoUserApp getEssWhoIsWho meta4GetListaEmpleados meta4DelFavoriteRh meta4DelNotificacion"/>
+
+  </service>
+</deployment>

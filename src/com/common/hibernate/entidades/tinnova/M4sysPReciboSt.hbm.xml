@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4sysPReciboSt" table="M4SYS_P_RECIBO_ST" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4sysPReciboStId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+            <key-property name="fecAltaEmpleado" type="timestamp">
+                <column name="FEC_ALTA_EMPLEADO" length="23" />
+            </key-property>
+            <key-property name="fecPaga" type="timestamp">
+                <column name="FEC_PAGA" length="23" />
+            </key-property>
+            <key-property name="fecImputacion" type="timestamp">
+                <column name="FEC_IMPUTACION" length="23" />
+            </key-property>
+            <key-property name="tipoRecibo" type="boolean">
+                <column name="TIPO_RECIBO" precision="1" scale="0" />
+            </key-property>
+        </composite-id>
+        <property name="path" type="string">
+            <column name="PATH" not-null="true" />
+        </property>
+        <property name="numFichero" type="int">
+            <column name="NUM_FICHERO" precision="8" scale="0" not-null="true" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="html" type="string">
+            <column name="HTML" />
+        </property>
+        <property name="pathPdf" type="string">
+            <column name="PATH_PDF" />
+        </property>
+        <property name="pdf" type="binary">
+            <column name="PDF" />
+        </property>
+    </class>
+</hibernate-mapping>

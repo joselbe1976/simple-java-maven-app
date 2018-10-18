@@ -1,0 +1,134 @@
+
+body{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    background-color:black; 
+      
+}
+label{
+       font-family: Arial, sans-serif;
+    font-size: 12px;
+    color:white; 
+}
+
+
+
+/* ,. Css */
+.cabe{
+    background: url(../../images/foot.png);
+    background-repeat:no-repeat;
+    color:#fff;
+}
+
+
+.pie{
+    background: url(../images/foot.png);
+    background-repeat:no-repeat;
+    color:#fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;    
+}
+.pietext{
+    color:#fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;    
+}
+
+.path{
+    
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    color:#006699;
+}
+
+.titulo{
+    font-family: Arial, sans-serif;
+    font-size: 26px;    
+    color:white;
+    
+}
+
+.texto1{
+    font-family: Arial, sans-serif;
+    font-size: 18px;    
+    color:#006699;
+    text-align : justify;
+}
+.texto2{
+    font-family: Arial, sans-serif;
+    font-size: 12px;    
+    color:#006699;
+    text-align : justify;
+}
+.titulofuncional{
+    background: url(../images/degradado2.png);
+    background-repeat:no-repeat;
+    color:black;
+    font-family:  Arial, sans-serif;
+    font-size: 20px;  
+    border-radius: 6px;
+    text-align:center;
+}
+
+.titulofuncionaldetalle{
+    color:#848484;
+    font-family:  Arial, sans-serif;
+    font-size: 12px;
+    text-align : justify;
+}
+
+
+hr{
+    color:#006699;
+}
+
+
+
+img { border: 0px }
+
+
+.defText{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color:#006699;   
+}
+
+.labelnormal
+{
+ color:white;   
+}
+
+
+
+.menu_equilibrha_logo {
+  margin: 100px auto; 
+}
+.menu_vincere_logo2 {
+  margin: 0px auto; 
+}
+
+
+
+
+.pathmarco {
+  position: relative;
+  margin:  0 auto;
+  width: 100%;
+  background: black;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+    color:white;  
+}
+
+
+.pathmarcoName {
+  position: relative;
+  margin:  0 auto;
+  width: 100%;
+  
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color:white;  
+  
+  
+}

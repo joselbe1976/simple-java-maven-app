@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tPuestTrab" table="M4T_PUEST_TRAB" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tPuestTrabId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idPuesto" type="string">
+                <column name="ID_PUESTO" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="NPuesto" type="string">
+            <column name="N_PUESTO" length="40" not-null="true" />
+        </property>
+        <property name="responsabilidades" type="string">
+            <column name="RESPONSABILIDADES" />
+        </property>
+        <property name="tareas" type="string">
+            <column name="TAREAS" />
+        </property>
+        <property name="formacNecesaria" type="string">
+            <column name="FORMAC_NECESARIA" />
+        </property>
+        <property name="experienciaMinima" type="string">
+            <column name="EXPERIENCIA_MINIMA" />
+        </property>
+        <property name="experiencValorabl" type="string">
+            <column name="EXPERIENC_VALORABL" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="formacValorable" type="string">
+            <column name="FORMAC_VALORABLE" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="idFamiliaPuesto" type="string">
+            <column name="ID_FAMILIA_PUESTO" length="4" not-null="true" />
+        </property>
+        <property name="idTipoPuesto" type="string">
+            <column name="ID_TIPO_PUESTO" length="2" not-null="true" />
+        </property>
+        <property name="idNivelSalarial" type="short">
+            <column name="ID_NIVEL_SALARIAL" precision="3" scale="0" not-null="true" />
+        </property>
+        <property name="idNivSalarExSt" type="string">
+            <column name="ID_NIV_SALAR_EX_ST" length="4" not-null="true" />
+        </property>
+        <property name="nivelHay" type="java.lang.Byte">
+            <column name="NIVEL_HAY" precision="2" scale="0" />
+        </property>
+        <property name="puntosHay" type="java.lang.Short">
+            <column name="PUNTOS_HAY" precision="4" scale="0" />
+        </property>
+        <property name="idNivel1Cno94" type="string">
+            <column name="ID_NIVEL1_CNO94" length="1" not-null="true" />
+        </property>
+        <property name="idNivel2Cno94" type="string">
+            <column name="ID_NIVEL2_CNO94" length="2" not-null="true" />
+        </property>
+        <property name="idCodigoCno94" type="string">
+            <column name="ID_CODIGO_CNO94" length="3" not-null="true" />
+        </property>
+        <property name="idSubcodCno" type="string">
+            <column name="ID_SUBCOD_CNO" length="4" not-null="true" />
+        </property>
+        <set name="m4tHistPuestoses" table="M4T_HIST_PUESTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_PUESTO" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tHistPuestos" />
+        </set>
+    </class>
+</hibernate-mapping>

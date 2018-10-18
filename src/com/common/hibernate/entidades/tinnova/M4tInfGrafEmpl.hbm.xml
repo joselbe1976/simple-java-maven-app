@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.common.hibernate.entidades.tinnova.M4tInfGrafEmpl" table="M4T_INF_GRAF_EMPL" schema="dbo" catalog="EMIND">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tInfGrafEmplId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+            <key-property name="idOrdinal" type="int">
+                <column name="ID_ORDINAL" precision="6" scale="0" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="m4tEmpleados" class="com.common.hibernate.entidades.tinnova.M4tEmpleados" update="false" insert="false" fetch="select">
+            <column name="ID_SOCIEDAD" length="2" not-null="true" />
+            <column name="ID_EMPLEADO" length="10" not-null="true" />
+        </many-to-one>
+        <property name="NFichero" type="string">
+            <column name="N_FICHERO" />
+        </property>
+        <property name="NDirectorio" type="string">
+            <column name="N_DIRECTORIO" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="infOrdinal" type="string">
+            <column name="INF_ORDINAL" length="50" />
+        </property>
+        <property name="idTipInfGrafica" type="string">
+            <column name="ID_TIP_INF_GRAFICA" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

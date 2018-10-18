@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 12-abr-2016 16:30:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <!--   <class name="com.common.hibernate.entidades.tinnova.M4tEmpleados" table="M4T_EMPLEADOS" schema="dbo" catalog="EMIND"> -->
+    <class name="M4tEmpleados" table="EMIND.dbo.M4T_EMPLEADOS">
+        <composite-id name="id" class="com.common.hibernate.entidades.tinnova.M4tEmpleadosId">
+            <key-property name="idSociedad" type="string">
+                <column name="ID_SOCIEDAD" length="2" />
+            </key-property>
+            <key-property name="idEmpleado" type="string">
+                <column name="ID_EMPLEADO" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="17" not-null="true" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="APELLIDO_1" length="20" not-null="true" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="APELLIDO_2" length="20" />
+        </property>
+        <property name="numPasaporte" type="string">
+            <column name="NUM_PASAPORTE" length="20" />
+        </property>
+        <property name="numAfiliacionSs" type="string">
+            <column name="NUM_AFILIACION_SS" length="12" />
+        </property>
+        <property name="fecNacimiento" type="timestamp">
+            <column name="FEC_NACIMIENTO" length="23" />
+        </property>
+        <property name="poblacNacimiento" type="string">
+            <column name="POBLAC_NACIMIENTO" length="25" />
+        </property>
+        <property name="coment" type="string">
+            <column name="COMENT" />
+        </property>
+        <property name="nivelSeguridad" type="java.lang.Byte">
+            <column name="NIVEL_SEGURIDAD" precision="2" scale="0" />
+        </property>
+        <property name="fecUltActualizac" type="timestamp">
+            <column name="FEC_ULT_ACTUALIZAC" length="23" />
+        </property>
+        <property name="idUsuario" type="string">
+            <column name="ID_USUARIO" length="40" />
+        </property>
+        <property name="idLegal" type="string">
+            <column name="ID_LEGAL" length="10" not-null="true" />
+        </property>
+        <property name="idNacion" type="string">
+            <column name="ID_NACION" length="3" not-null="true" />
+        </property>
+        <property name="idSexo" type="char">
+            <column name="ID_SEXO" length="1" not-null="true" />
+        </property>
+        <property name="idEstadoCivil" type="char">
+            <column name="ID_ESTADO_CIVIL" length="1" not-null="true" />
+        </property>
+        <property name="idNacionalidad" type="string">
+            <column name="ID_NACIONALIDAD" length="3" not-null="true" />
+        </property>
+        <property name="idAgrupSeguridad" type="string">
+            <column name="ID_AGRUP_SEGURIDAD" length="10" not-null="true" />
+        </property>
+        <property name="idSubdivNacimien" type="byte">
+            <column name="ID_SUBDIV_NACIMIEN" precision="2" scale="0" not-null="true" />
+        </property>
+        <property name="idTipIdLegalSt" type="char">
+            <column name="ID_TIP_ID_LEGAL_ST" length="1" not-null="true" />
+        </property>
+        <property name="idLegalRepSt" type="string">
+            <column name="ID_LEGAL_REP_ST" length="10" />
+        </property>
+        <property name="paisEmisorSt" type="string">
+            <column name="PAIS_EMISOR_ST" length="3" />
+        </property>
+        <property name="cancelDatPer" type="string">
+            <column name="CANCEL_DAT_PER" length="1" not-null="true" />
+        </property>
+        <set name="m4tDepartamentosesForFkEmpleadDeptos" table="M4T_DEPARTAMENTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_RESPONSABLE" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tDepartamentos" />
+        </set>
+        <set name="m4tDepartamentosesForFkEmplDptosResps" table="M4T_DEPARTAMENTOS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_RESPONS_RESP" length="10" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tDepartamentos" />
+        </set>
+        <set name="m4tFasesAltas" table="M4T_FASES_ALTA" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tFasesAlta" />
+        </set>
+        <set name="m4tInfGrafEmpls" table="M4T_INF_GRAF_EMPL" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ID_SOCIEDAD" length="2" not-null="true" />
+                <column name="ID_EMPLEADO" length="10" not-null="true" />
+            </key>
+            <one-to-many class="com.common.hibernate.entidades.tinnova.M4tInfGrafEmpl" />
+        </set>
+    </class>
+</hibernate-mapping>
